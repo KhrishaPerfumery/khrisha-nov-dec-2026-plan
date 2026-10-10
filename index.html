@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapel Street Season Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: one calm column. The plan reads top to bottom as four parts on a spine: launch & events, Black Friday, gifting, Boxing Day. Light only, by request. Print builds its own condensed A4 version. */
+:root{
+  color-scheme: light;
+  --bg:#F5F5F7; --panel:#FBFBFD; --card:#FFFFFF;
+  --ink:#1D1D1F; --ink-2:#424245; --muted:#6E6E73; --line:rgba(0,0,0,.08); --line-2:rgba(0,0,0,.05);
+  --focus:#0A66D8;
+  --display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body:"Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ground:#56677F; --ground-t:#EDF0F5;
+  --vip:#5B47DE;    --vip-t:#EFEDFD;
+  --open:#A8690F;   --open-t:#FBF1E1;
+  --clear:#0B7F80;  --clear-t:#E2F3F2;
+  --bf:#1D1D1F;     --bf-t:#EBEBED;
+  --gift:#1D7F46;   --gift-t:#E4F3E9;
+  --boxing:#0A62CF; --boxing-t:#E6EFFC;
+  --team:#B23F69;   --team-t:#FBEAF0;
+  --warn:#9A5B00;   --warn-t:#FFF4DE;
+  --r-lg:28px; --r-md:20px; --r-sm:14px;
+  --shadow:0 1px 2px rgba(0,0,0,.04), 0 10px 30px rgba(0,0,0,.05);
+  --shadow-hi:0 2px 4px rgba(0,0,0,.05), 0 18px 44px rgba(0,0,0,.09);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-sheet:cubic-bezier(.32,.72,0,1);
+  --lab:168px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:84px}
+body{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px; margin:0 auto; padding-inline:20px}
+h1,h2,h3,h4{font-family:var(--display); font-weight:400; text-wrap:balance; margin:0; letter-spacing:-.005em}
+p{margin:0}
+button{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--focus); outline-offset:3px; border-radius:12px}
+svg.i{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; flex:none}
+.mono{font-family:var(--mono); font-size:12.5px; letter-spacing:.01em; font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.print-only{display:none}
+
+/* nav */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(245,245,247,.78); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--line-2)}
+.nav .wrap{display:flex; align-items:center; gap:18px; height:56px}
+.brand{font-family:var(--display); font-size:21px; white-space:nowrap}
+.brand span{color:var(--muted); font-family:var(--body); font-size:13px; margin-left:8px}
+.links{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none; min-width:0}
+.links::-webkit-scrollbar{display:none}
+.links a{color:var(--ink-2); text-decoration:none; font-size:13.5px; padding:7px 12px; border-radius:999px; white-space:nowrap; transition:background-color .18s, color .18s}
+.links a:hover{background:rgba(0,0,0,.05); color:var(--ink)}
+
+/* hero */
+.hero{padding-block:56px 28px; display:grid; gap:22px}
+.hero h1{font-size:clamp(44px,7vw,88px); line-height:.98}
+.hero h1 em{font-style:italic; color:var(--open)}
+.lede{max-width:64ch; font-size:18px; color:var(--ink-2)}
+.facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+.fact{display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:8px 16px 8px 9px; font-size:14px}
+.fact .dot{width:30px; height:30px; border-radius:50%; display:grid; place-items:center}
+.fact .dot svg{width:17px; height:17px}
+.fact b{font-weight:500}
+.fact .mono{color:var(--muted)}
+.goals{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:18px}
+.goal{background:var(--card); border-radius:var(--r-md); padding:20px 22px; box-shadow:var(--shadow); display:grid; gap:8px; align-content:start}
+.goal .eyebrow{display:flex; gap:8px; align-items:center}
+.goal p{color:var(--ink-2); font-size:15px}
+.rules{display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--ink-2); font-size:14px}
+.rules span{display:inline-flex; gap:7px; align-items:center}
+.rules svg{width:16px; height:16px; color:var(--muted)}
+
+/* sections */
+section{padding-block:64px 8px}
+.head{display:flex; align-items:end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:24px}
+.head h2{font-size:clamp(34px,4.4vw,48px); line-height:1.05}
+.head p{color:var(--muted); max-width:52ch; font-size:15px}
+
+/* the map: core on top, four parts hanging off one spine */
+.canvas{position:relative; background:var(--panel); border:1px solid var(--line); border-radius:var(--r-lg); padding:32px; background-image:radial-gradient(rgba(0,0,0,.07) 1px, transparent 1.2px); background-size:22px 22px}
+.core{background:var(--card); border-radius:24px; padding:20px 24px; box-shadow:var(--shadow-hi); display:flex; flex-wrap:wrap; align-items:center; gap:10px 24px; position:relative; z-index:1}
+.core h3{font-size:32px; line-height:1.04}
+.core h3 em{font-style:italic}
+.core .addr{display:flex; gap:6px; align-items:center; color:var(--muted); font-size:13.5px}
+.core .addr svg{width:16px; height:16px}
+.core .grow{flex:1 1 280px; min-width:0; display:grid; gap:6px}
+.spectrum{display:flex; width:100%; height:8px; border-radius:99px; overflow:hidden; gap:2px}
+.spectrum i{display:block; height:100%}
+.tree{position:relative; display:grid; gap:26px; padding:26px 0 0 46px}
+.tree::before{content:""; position:absolute; left:17px; top:0; bottom:34px; width:2px; border-radius:2px; background:linear-gradient(var(--open) 0 32%, var(--bf) 32% 62%, var(--gift) 62% 84%, var(--boxing) 84%)}
+.band{position:relative; display:grid; grid-template-columns:250px minmax(0,1fr); gap:18px; align-items:start; animation:rise .55s var(--ease-out) both}
+.band::before{content:""; position:absolute; left:-36px; top:22px; width:16px; height:16px; border-radius:50%; background:var(--c); box-shadow:0 0 0 4px var(--panel), 0 0 0 5px var(--line)}
+.band::after{content:""; position:absolute; left:-18px; top:29px; width:14px; height:2px; background:var(--c); opacity:.5}
+.band-head{display:grid; gap:8px; padding:4px 4px 0}
+.band-head .top{display:flex; gap:10px; align-items:center}
+.band-head .ico{width:40px; height:40px; border-radius:13px; display:grid; place-items:center; background:var(--t); color:var(--c)}
+.band-head h3{font-size:34px; line-height:1}
+.band-head .when{color:var(--c); font-weight:500}
+.band-head p{color:var(--ink-2); font-size:14.5px; line-height:1.45}
+.items{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px}
+.node{position:relative; text-align:left; background:var(--card); border:1px solid var(--line); border-radius:var(--r-md); padding:18px 18px 16px; cursor:pointer; display:grid; gap:9px; align-content:start; box-shadow:0 1px 2px rgba(0,0,0,.03);
+  transition:transform .22s var(--ease-out), box-shadow .22s var(--ease-out), border-color .22s}
+.node:hover{transform:translateY(-2px); box-shadow:var(--shadow-hi); border-color:transparent}
+.node:active{transform:translateY(0) scale(.985); transition-duration:.1s}
+.node:focus-visible{outline-color:var(--c)}
+.node .top{display:flex; align-items:center; gap:10px}
+.node .ico{width:34px; height:34px; border-radius:11px; display:grid; place-items:center; background:var(--t); color:var(--c)}
+.node .ico svg{width:18px; height:18px}
+.node h4{font-size:23px; line-height:1.08}
+.node .when{color:var(--c); font-weight:500}
+.node .sum{color:var(--ink-2); font-size:14.5px; line-height:1.45}
+.leaves{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px}
+.leaf{font-size:12.5px; padding:4px 10px; border-radius:999px; background:var(--t); color:var(--c); white-space:nowrap}
+.node .open{display:flex; align-items:center; gap:4px; font-size:13px; color:var(--muted); margin-top:2px}
+.node .open svg{width:15px; height:15px; transition:transform .2s var(--ease-out)}
+.node:hover .open svg{transform:translateX(3px)}
+.tentative{font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--warn); background:var(--warn-t); padding:2px 7px; border-radius:6px; margin-left:auto}
+
+/* calendar */
+.gantt-wrap{background:var(--card); border-radius:var(--r-lg); box-shadow:var(--shadow); padding:22px 22px 26px; overflow-x:auto}
+.gantt{min-width:900px; display:grid; grid-template-columns:var(--lab) minmax(0,1fr); row-gap:8px}
+.g-label{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; padding-right:14px}
+.g-label .sw{width:10px; height:10px; border-radius:50%; flex:none}
+.g-group{grid-column:1 / -1; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--c); padding-top:8px; border-top:1px solid var(--line-2)}
+.g-group:first-of-type{border-top:0}
+.track{position:relative; height:50px; border-radius:12px; background:repeating-linear-gradient(90deg, transparent 0 calc(100%/88*7 - 1px), var(--line-2) calc(100%/88*7 - 1px) calc(100%/88*7))}
+.weeks{position:relative; height:44px}
+.weeks span{position:absolute; top:0; transform:translateX(-1px); white-space:nowrap; font-family:var(--mono); font-size:11px; color:var(--muted); border-left:1px solid var(--line); padding-left:6px; height:44px; line-height:1.3}
+.weeks span b{display:block; font-weight:500; color:var(--ink-2); font-family:var(--body); font-size:12px}
+.bar{position:absolute; top:22px; bottom:4px; border-radius:999px; display:flex; align-items:center; padding:0 12px; font-size:12.5px; color:#fff; white-space:nowrap; min-width:12px; overflow:hidden}
+.bar.soft{background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.3) 0 6px, transparent 6px 12px)}
+.mile{position:absolute; top:35px; width:12px; height:12px; transform:translate(-50%,-50%) rotate(45deg); border-radius:3px; border:2px solid #fff; box-shadow:0 0 0 1px var(--line)}
+.mile-l{position:absolute; top:3px; font-family:var(--mono); font-size:10.5px; color:var(--ink-2); white-space:nowrap; transform:translateX(-5px)}
+.mile-l.r{transform:translateX(calc(-100% + 5px))}
+.g-body{position:relative; grid-column:1 / -1; display:grid; grid-template-columns:var(--lab) minmax(0,1fr); row-gap:8px}
+.today{position:absolute; top:-6px; bottom:0; width:0; border-left:1.5px dashed #E0473D; z-index:2}
+.today span{position:absolute; top:-18px; left:-18px; font-family:var(--mono); font-size:10.5px; color:#C4382F; background:#fff; padding:0 4px}
+.g-note{margin-top:16px; color:var(--muted); font-size:13.5px; display:flex; gap:16px; flex-wrap:wrap}
+.g-note span{display:inline-flex; gap:8px; align-items:center}
+.key-soft{width:26px; height:12px; border-radius:99px; background:var(--ground) repeating-linear-gradient(135deg, rgba(255,255,255,.35) 0 4px, transparent 4px 8px)}
+.key-mile{width:10px; height:10px; transform:rotate(45deg); border-radius:2px; background:var(--ink)}
+
+/* showcase */
+.houses{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
+.house{background:var(--card); border-radius:var(--r-md); padding:20px 22px; box-shadow:var(--shadow); display:grid; gap:12px; align-content:start}
+.house h3{font-size:26px; line-height:1.05}
+.house ul{list-style:none; margin:0; padding:0; display:grid; gap:7px}
+.house li{display:flex; align-items:center; gap:9px; font-size:15px}
+.house li svg{width:16px; height:16px; color:var(--vip)}
+.confirm{font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--warn); background:var(--warn-t); padding:2px 7px; border-radius:6px}
+.house.todo{background:transparent; box-shadow:none; border:1.5px dashed rgba(0,0,0,.14)}
+.house.todo p{color:var(--muted); font-size:14.5px}
+
+/* run sheet */
+.weeksheet{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px}
+.wk{background:var(--card); border-radius:var(--r-md); box-shadow:var(--shadow); padding:18px 16px; display:grid; gap:12px; align-content:start}
+.wk header{display:grid; gap:2px; padding-bottom:10px; border-bottom:1px solid var(--line-2)}
+.wk header h3{font-size:23px}
+.wk.now header h3::after{content:"This week"; font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--ink); padding:2px 7px; border-radius:6px; margin-left:8px; vertical-align:4px}
+.task{display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; align-items:start}
+.task label{font-size:14px; line-height:1.4; cursor:pointer; display:grid; gap:5px}
+.task .meta{display:flex; gap:6px; align-items:center; flex-wrap:wrap}
+.who{font-size:11.5px; padding:2px 8px; border-radius:99px; background:#F0F0F2; color:var(--ink-2); white-space:nowrap}
+.pdot{width:8px; height:8px; border-radius:50%; display:inline-block; flex:none}
+.tick{appearance:none; -webkit-appearance:none; width:22px; height:22px; margin:0; border-radius:50%; border:1.6px solid #C7C7CC; display:grid; place-items:center; cursor:pointer; transition:background-color .16s, border-color .16s}
+.tick::after{content:""; width:10px; height:6px; border-left:2px solid #fff; border-bottom:2px solid #fff; transform:translateY(-1px) rotate(-45deg) scale(.6); opacity:0; transition:transform .18s var(--ease-out), opacity .12s}
+.tick:checked{background:var(--k, var(--ink)); border-color:var(--k, var(--ink))}
+.tick:checked::after{opacity:1; transform:translateY(-1px) rotate(-45deg) scale(1)}
+.task:has(.tick:checked) label > span:first-child{color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(0,0,0,.25)}
+.event-row{display:flex; gap:8px; align-items:center; font-size:13.5px; font-weight:500; padding:8px 10px; border-radius:12px}
+.small-note{color:var(--muted); font-size:13px; margin-top:12px; display:flex; gap:6px; align-items:center}
+.small-note svg{width:15px; height:15px}
+
+/* decisions */
+.decisions{background:var(--card); border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden}
+.dec{display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:14px; align-items:center; padding:16px 22px; border-top:1px solid var(--line-2)}
+.dec:first-child{border-top:0}
+.dec .q{font-size:15.5px; display:grid; gap:3px}
+.dec .q small{color:var(--muted); font-size:13.5px}
+.dec .r{display:grid; justify-items:end; gap:4px; text-align:right}
+.dec .r .mono{color:var(--muted)}
+.dec:has(.tick:checked) .q > span{color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(0,0,0,.25)}
+
+/* owners */
+.owners{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px}
+.owner{background:var(--card); border-radius:var(--r-md); box-shadow:var(--shadow); padding:20px 22px; display:grid; gap:12px; align-content:start}
+.owner .top{display:flex; gap:12px; align-items:center}
+.av{width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font-family:var(--display); font-size:20px; flex:none}
+.owner h3{font-size:24px; line-height:1.1}
+.owner .role{color:var(--muted); font-size:13.5px}
+.owner ul{margin:0; padding:0; list-style:none; display:grid; gap:7px}
+.owner li{display:grid; grid-template-columns:auto minmax(0,1fr); gap:9px; font-size:14.5px; color:var(--ink-2)}
+.owner li .pdot{margin-top:8px}
+.owner.unassigned{border:1.5px dashed rgba(0,0,0,.16); box-shadow:none; background:transparent}
+
+footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+
+/* sheet */
+.scrim{position:fixed; inset:0; background:rgba(29,29,31,.18); z-index:40; opacity:0; transition:opacity .28s var(--ease-out)}
+.sheet{position:fixed; z-index:50; top:12px; right:12px; bottom:12px; width:min(520px, calc(100vw - 24px)); background:var(--card); border-radius:26px; box-shadow:0 24px 80px rgba(0,0,0,.18); display:flex; flex-direction:column; overflow:hidden;
+  opacity:0; transform:translateX(28px); transition:transform .34s var(--ease-sheet), opacity .26s var(--ease-out)}
+.is-open .scrim{opacity:1}
+.is-open .sheet{opacity:1; transform:none}
+.is-closing .sheet{transition-duration:.2s, .18s; transform:translateX(12px)}
+.sh-head{padding:22px 24px 18px; background:var(--t); display:grid; gap:10px; flex:none}
+.sh-top{display:flex; align-items:center; gap:10px}
+.sh-head .ico{width:40px; height:40px; border-radius:13px; background:var(--card); color:var(--c); display:grid; place-items:center}
+.sh-head .step{color:var(--c)}
+.x{margin-left:auto; width:36px; height:36px; border-radius:50%; border:0; background:rgba(255,255,255,.8); display:grid; place-items:center; cursor:pointer; transition:background-color .15s}
+.x:hover{background:#fff}
+.sh-head h2{font-size:38px; line-height:1.02}
+.sh-head .when{font-weight:500; color:var(--c); font-size:15px}
+.sh-body{overflow-y:auto; padding:6px 24px 24px; overscroll-behavior:contain; display:grid; gap:4px; align-content:start}
+.blk{padding-block:18px; border-bottom:1px solid var(--line-2); display:grid; gap:10px}
+.blk:last-child{border-bottom:0}
+.blk p{color:var(--ink-2); font-size:15px; max-width:62ch}
+.kv{display:grid; grid-template-columns:minmax(110px,auto) minmax(0,1fr); border-radius:var(--r-sm); background:#F7F7F9; overflow:hidden}
+.kv div{padding:10px 14px; font-size:14.5px; border-top:1px solid #fff}
+.kv div:nth-child(-n+2){border-top:0}
+.kv .k{color:var(--muted)}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; padding:6px 12px 6px 9px; border-radius:999px; background:#F2F2F4; color:var(--ink-2)}
+.chip svg{width:16px; height:16px; color:var(--c)}
+.flag{display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; font-size:14.5px; background:var(--warn-t); color:#5C3A00; border-radius:var(--r-sm); padding:11px 14px}
+.flag svg{width:17px; height:17px; color:var(--warn); margin-top:2px}
+.note{display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; font-size:14.5px; background:#F2F6FD; color:#18375E; border-radius:var(--r-sm); padding:11px 14px}
+.note svg{width:17px; height:17px; color:var(--boxing); margin-top:2px}
+.sh-houses{display:grid; gap:8px}
+.sh-house{display:grid; grid-template-columns:120px minmax(0,1fr); gap:10px; font-size:14px; padding:9px 0; border-top:1px solid var(--line-2)}
+.sh-house:first-child{border-top:0}
+.sh-house b{font-weight:500}
+.sh-house span{color:var(--ink-2)}
+.sh-foot{flex:none; display:flex; justify-content:space-between; gap:10px; padding:12px 16px; border-top:1px solid var(--line-2)}
+.pager{display:inline-flex; align-items:center; gap:6px; border:0; background:#F2F2F4; border-radius:999px; padding:9px 14px; font-size:13.5px; cursor:pointer; transition:background-color .15s; max-width:48%}
+.pager span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.pager:hover{background:#E8E8EB}
+.pager svg{width:16px; height:16px}
+
+@keyframes rise{from{opacity:.001; transform:translateY(10px)} to{opacity:1; transform:none}}
+
+@media (max-width:1000px){
+  .weeksheet{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .goals{grid-template-columns:minmax(0,1fr)}
+  .band{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:820px){
+  .canvas{padding:18px 14px}
+  .tree{padding-left:32px; gap:30px}
+  .tree::before{left:9px}
+  .band::before{left:-29px}
+  .band::after{display:none}
+  .hero{padding-block:36px 16px}
+  .sheet{top:auto; left:0; right:0; bottom:0; width:100%; max-height:88vh; border-radius:26px 26px 0 0; transform:translateY(40px); padding-bottom:env(safe-area-inset-bottom,0px)}
+  .is-closing .sheet{transform:translateY(24px)}
+  .sh-house{grid-template-columns:minmax(0,1fr)}
+  .dec{grid-template-columns:auto minmax(0,1fr)}
+  .dec .r{grid-column:2; justify-items:start; text-align:left}
+}
+@media (max-width:560px){
+  .weeksheet{grid-template-columns:minmax(0,1fr)}
+  .brand span{display:none}
+  .kv{grid-template-columns:minmax(0,1fr)}
+  .kv .k{padding-bottom:0}
+  .kv .k + div{border-top:0; padding-top:2px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .band{animation:none}
+  .node, .node .open svg, .tick::after{transition:none}
+  .node:hover{transform:none}
+  .sheet{transform:none !important; transition:opacity .15s linear}
+}
+
+/* ---------- print: condensed A4 ---------- */
+@page{size:A4; margin:10mm 11mm 11mm}
+@media print{
+  :root{--lab:96px}
+  html,body{background:#fff}
+  body{font-size:7.9pt; line-height:1.33; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .screen-only, .nav, #layer{display:none !important}
+  .print-only{display:block}
+  .wrap{max-width:none; padding:0}
+  .pg{break-after:page; display:grid; gap:3mm; align-content:start}
+  .pg:last-child{break-after:auto}
+  .p-top{display:flex; justify-content:space-between; align-items:baseline; border-bottom:.3mm solid #1D1D1F; padding-bottom:2mm}
+  .p-top .eyebrow{font-size:6.6pt}
+  .p-title{font-size:26pt; line-height:1}
+  .p-title em{font-style:italic; color:var(--open)}
+  .p-h{display:flex; align-items:center; gap:2.6mm}
+  .p-h .ico{width:8mm; height:8mm; border-radius:2.4mm; display:grid; place-items:center; background:var(--t); color:var(--c)}
+  .p-h .ico svg{width:4.6mm; height:4.6mm}
+  .p-h h2{font-size:18pt; line-height:1}
+  .p-h .when{margin-left:auto; color:var(--c); font-family:var(--mono); font-size:7.6pt}
+  .p-lead{color:var(--ink-2); font-size:8.2pt; max-width:none}
+  .p-goals{display:grid; grid-template-columns:repeat(3,1fr); gap:3mm}
+  .p-goals div{background:#F5F5F7; border-radius:3mm; padding:2.6mm 3.2mm; display:grid; gap:1mm}
+  .p-goals .eyebrow{font-size:6.2pt}
+  .p-rules{display:grid; grid-template-columns:repeat(4,1fr); gap:2mm}
+  .p-rules div{border:.25mm solid rgba(0,0,0,.12); border-radius:2.4mm; padding:2mm 2.4mm; font-size:7.4pt; color:var(--ink-2)}
+  .p-tree{display:grid; gap:2.4mm; position:relative; padding-left:6mm}
+  .p-tree::before{content:""; position:absolute; left:1.6mm; top:2mm; bottom:2mm; width:.6mm; border-radius:1mm; background:linear-gradient(var(--open) 0 32%, var(--bf) 32% 62%, var(--gift) 62% 84%, var(--boxing) 84%)}
+  .p-band{position:relative; display:grid; grid-template-columns:36mm 1fr; gap:3mm; border:.25mm solid rgba(0,0,0,.1); border-radius:3mm; padding:2mm 2.6mm; break-inside:avoid}
+  .p-band::before{content:""; position:absolute; left:-5.9mm; top:3.4mm; width:3mm; height:3mm; border-radius:50%; background:var(--c); box-shadow:0 0 0 .8mm #fff}
+  .p-band h3{font-size:14pt; line-height:1.05}
+  .p-band .when{font-family:var(--mono); font-size:6.8pt; color:var(--c)}
+  .p-sub{display:grid; grid-template-columns:repeat(3,1fr); gap:2mm}
+  .p-sub div{background:var(--t); border-radius:2mm; padding:1.6mm 2.2mm; display:grid; gap:.4mm}
+  .p-sub b{font-weight:600; color:var(--c); font-size:8pt}
+  .p-sub .mono{font-size:6.6pt; color:var(--ink-2)}
+  .p-sub span{font-size:7.4pt; color:var(--ink-2)}
+  .gantt-wrap{box-shadow:none; border:.25mm solid rgba(0,0,0,.1); border-radius:3mm; padding:2.6mm 3mm 3mm; overflow:visible}
+  .gantt{min-width:0; row-gap:1mm}
+  .g-body{row-gap:1mm}
+  .g-label{font-size:6.8pt; gap:1.6mm; padding-right:1mm}
+  .g-label .sw{width:2mm; height:2mm}
+  .g-group{font-size:5.8pt; padding-top:1mm}
+  .weeks{height:6.6mm}
+  .weeks span{font-size:5.4pt; height:6.6mm; padding-left:1mm}
+  .weeks span b{font-size:6.4pt}
+  .track{height:6.2mm}
+  .bar{top:2.6mm; bottom:.4mm; font-size:5.8pt; padding:0 2mm}
+  .mile{top:4.5mm; width:2mm; height:2mm; border-width:.35mm}
+  .mile-l{font-size:5.3pt; top:-.4mm}
+  .today span{font-size:5.6pt; top:-3mm}
+  .g-note{display:none}
+  .p-item{display:grid; grid-template-columns:1.05fr 1fr; gap:4mm; border-top:.25mm solid rgba(0,0,0,.12); padding-top:1.8mm; break-inside:avoid}
+  .p-item h3{font-size:13pt; line-height:1.05; display:flex; gap:2mm; align-items:baseline; flex-wrap:wrap}
+  .p-item h3 .mono{font-size:7pt; color:var(--c)}
+  .p-item .col{display:grid; gap:1.2mm; align-content:start}
+  .p-item p{color:var(--ink-2)}
+  .p-kv{display:grid; grid-template-columns:24mm 1fr; background:#F5F5F7; border-radius:2mm; overflow:hidden}
+  .p-kv div{padding:.7mm 2mm; border-top:.3mm solid #fff; font-size:7.2pt}
+  .p-kv div:nth-child(-n+2){border-top:0}
+  .p-kv .k{color:var(--muted)}
+  .p-label{font-family:var(--mono); font-size:6.2pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .p-list{list-style:none; margin:0; padding:0; display:grid; gap:.5mm}
+  .p-list li{display:grid; grid-template-columns:3mm 1fr; gap:1.4mm; font-size:7.3pt}
+  .p-list .box{width:2.6mm; height:2.6mm; border:.3mm solid #8E8E93; border-radius:50%; margin-top:.5mm}
+  .p-flag{background:var(--warn-t); color:#5C3A00; border-radius:2mm; padding:.9mm 2mm; font-size:7pt}
+  .p-flag b{font-weight:600}
+  .p-note{background:#F2F6FD; color:#18375E; border-radius:2mm; padding:.9mm 2mm; font-size:7pt}
+  .p-houses{display:grid; grid-template-columns:repeat(4,1fr); gap:2mm}
+  .p-houses div{background:var(--vip-t); border-radius:2mm; padding:1.6mm 2.2mm; font-size:7.4pt}
+  .p-houses b{display:block; font-family:var(--display); font-weight:400; font-size:10.5pt; color:var(--vip)}
+  .p-weeks{display:grid; grid-template-columns:repeat(5,1fr); gap:2mm}
+  .p-weeks > div{border:.25mm solid rgba(0,0,0,.12); border-radius:2.6mm; padding:2mm 2.2mm; display:grid; gap:1.2mm; align-content:start}
+  .p-weeks h4{font-size:11pt}
+  .p-weeks .ev{font-size:7pt; font-weight:600; border-radius:1.6mm; padding:.8mm 1.6mm}
+  .p-weeks li{font-size:7.3pt}
+  .p-weeks .w{color:var(--muted); font-size:6.4pt; display:block}
+  .p-dec{display:grid; grid-template-columns:1fr 1fr; gap:0 5mm}
+  .p-dec > div{display:grid; grid-template-columns:3.2mm 1fr auto; gap:1.6mm; padding:1.3mm 0; border-top:.25mm solid rgba(0,0,0,.1); font-size:7.6pt; break-inside:avoid}
+  .p-dec small{color:var(--muted); display:block; font-size:6.8pt}
+  .p-dec .by{font-family:var(--mono); font-size:6.4pt; color:var(--muted); text-align:right; white-space:nowrap}
+  .p-owners{display:grid; grid-template-columns:repeat(5,1fr); gap:2mm}
+  .p-owners > div{border-radius:2.6mm; padding:2mm 2.4mm; background:var(--t); display:grid; gap:1mm; align-content:start}
+  .p-owners b{font-family:var(--display); font-weight:400; font-size:11pt; color:var(--c)}
+  .p-owners li{font-size:7.2pt; color:var(--ink-2)}
+  .p-owners ul{margin:0; padding-left:3mm}
+  .p-foot{display:flex; justify-content:space-between; color:var(--muted); font-size:6.6pt; border-top:.25mm solid rgba(0,0,0,.12); padding-top:1.6mm}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5.5" y="4" width="13" height="17" rx="2.5"/><path d="M9 3.5h6v3H9zM9 11h6M9 15h4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M18.5 15l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+    <symbol id="i-door" viewBox="0 0 24 24"><path d="M6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21M3.5 21h17"/><circle cx="14.6" cy="12.5" r=".6"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.2V5A1.5 1.5 0 0 1 5 3.5h7.2l8.3 8.3a1.5 1.5 0 0 1 0 2.1l-7.1 7.1a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.4"/></symbol>
+    <symbol id="i-pct" viewBox="0 0 24 24"><path d="M18.5 5.5l-13 13"/><circle cx="7.2" cy="7.2" r="2.4"/><circle cx="16.8" cy="16.8" r="2.4"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v7.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V12M12 8v13M12 8S10.6 3.6 8.1 4.2C6 4.8 6.7 8 12 8zM12 8s1.4-4.4 3.9-3.8C18 4.8 17.3 8 12 8z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9M7.8 5.3l8.4 4.5"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.6 14.6c2.6.2 4.4 2.1 4.4 4.9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.8 7l8.2 6 8.2-6"/></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l7 4V5L7 9H5a1 1 0 0 0-1 1zM17.5 9a4 4 0 0 1 0 6M7.5 15l1 5"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7L10 4.5h4L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+    <symbol id="i-social" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".5"/></symbol>
+    <symbol id="i-press" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="14" height="15" rx="2"/><path d="M17.5 8.5h2a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2h-13M7 8.5h7M7 12h7M7 15.5h4"/></symbol>
+    <symbol id="i-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 3.4 5.4 3.4 8.5s-1 5.9-3.4 8.5c-2.4-2.6-3.4-5.4-3.4-8.5s1-5.9 3.4-8.5z"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5M3 9.5l1.6-5h14.8l1.6 5zM3 9.5c0 1.4 1.1 2.5 2.5 2.5S8 10.9 8 9.5c0 1.4 1.1 2.5 2.5 2.5h3c1.4 0 2.5-1.1 2.5-2.5 0 1.4 1.1 2.5 2.5 2.5S21 10.9 21 9.5M10 20v-5h4v5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3z"/><path d="M12 10v4.2M12 16.9v.1"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.1"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><rect x="6.5" y="9" width="11" height="12" rx="3"/><path d="M10 9V6.2h4V9M9.5 3.5h5v2.7h-5z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+    <symbol id="i-device" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4L19 7"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <div class="brand">Khrisha<span>November &amp; December</span></div>
+    <div class="links">
+      <a href="#map">The plan</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#onshow">On show</a>
+      <a href="#weeks">Next 5 weeks</a>
+      <a href="#owners">Who runs what</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap screen-only">
+  <header class="hero">
+    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Sat 10 Oct 2026</div>
+    <h1>November &amp; <em>December</em></h1>
+    <p class="lede">Our plan for the last two months of the year, in four parts. First the Chapel Street launch and its two events. Then Black Friday with the clearance. Then the gifting season. Boxing Day closes the year. Tap any card to open its full brief.</p>
+    <div class="facts" id="facts"></div>
+    <div class="goals" id="goals"></div>
+    <div class="rules" id="rules"></div>
+  </header>
+
+  <section id="map" aria-labelledby="map-h">
+    <div class="head">
+      <h2 id="map-h">The plan</h2>
+      <p>Four parts, top to bottom in date order. Each card opens the detail: the offer, the dates, the channels, the jobs and what we still need to decide.</p>
+    </div>
+    <div class="canvas">
+      <div class="core">
+        <div class="grow">
+          <div class="eyebrow">Khrisha Perfumery · Nov – Dec 2026</div>
+          <h3>Chapel Street <em>&amp; the end of the year</em></h3>
+          <div class="addr"><svg class="i"><use href="#i-pin"/></svg>555B Chapel Street, South Yarra · and online</div>
+        </div>
+        <div class="grow" style="flex:0 1 300px">
+          <div class="spectrum" id="spectrum" aria-hidden="true"></div>
+          <div class="mono" style="color:var(--muted)">10 Oct → 27 Dec · 4 parts · 7 stages</div>
+        </div>
+      </div>
+      <div class="tree" id="tree"></div>
+    </div>
+  </section>
+
+  <section id="calendar" aria-labelledby="cal-h">
+    <div class="head">
+      <h2 id="cal-h">Calendar</h2>
+      <p>Week by week from today to the end of December, grouped into the four parts. Striped bars are tentative.</p>
+    </div>
+    <div class="gantt-wrap"><div class="gantt" id="gantt"></div>
+      <div class="g-note">
+        <span><i class="key-soft"></i>Tentative date</span>
+        <span><i class="key-mile"></i>Key day</span>
+        <span><i style="width:14px;border-top:1.5px dashed #E0473D;display:inline-block"></i>Today</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="onshow" aria-labelledby="show-h">
+    <div class="head">
+      <h2 id="show-h">On show at VIP night</h2>
+      <p>The fragrances we present on the night, by house. Names follow our catalogue spelling. Three items need a quick confirm before anything gets printed.</p>
+    </div>
+    <div class="houses" id="houses"></div>
+  </section>
+
+  <section id="weeks" aria-labelledby="wk-h">
+    <div class="head">
+      <h2 id="wk-h">The next five weeks</h2>
+      <p>What has to happen each week to get us to VIP night and opening day in good shape. Tick things off as they are done.</p>
+    </div>
+    <div class="weeksheet" id="weeksheet"></div>
+    <p class="small-note"><svg class="i"><use href="#i-device"/></svg>Ticks are saved in your own browser only. Other people will not see them.</p>
+  </section>
+
+  <section id="owners" aria-labelledby="own-h">
+    <div class="head">
+      <h2 id="own-h">Who runs what</h2>
+      <p>One name per job. If something here has no owner, it will not get done.</p>
+    </div>
+    <div class="owners" id="ownersGrid"></div>
+  </section>
+
+  <footer>
+    <span>Khrisha Perfumery · internal planning, not for customers.</span>
+    <span><svg class="i" style="width:14px;height:14px;vertical-align:-2px"><use href="#i-lock"/></svg> Sales targets are held separately and are not in this plan.</span>
+  </footer>
+</main>
+
+<div class="print-only" id="print"></div>
+
+<div id="layer" hidden>
+  <div class="scrim" id="scrim"></div>
+  <aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title" tabindex="-1"></aside>
+</div>
+
+<script>
+const ic = (id, cls='i') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+const v = n => `var(${n})`;
+
+const P = [
+ { id:'groundwork', name:'Groundwork', icon:'clip', c:'--ground',
+   when:'Now → Mon 9 Nov', start:'2026-10-10', end:'2026-11-09',
+   sum:'Everything that has to be locked before the doors open.',
+   leaves:['Waitlist','Guest lists','Press','Gift boxes','Permits'],
+   what:'Four weeks to get the invitations out, the press pitched, the boxes made and the paperwork done. Most problems on an opening night are caused in these four weeks, so this stage gets the same attention as the events themselves.',
+   why:'Walk into VIP week with a confirmed guest list, a confirmed opening date, boxes on the shelf and every discount already built in Shopify.',
+   terms:[['Opening','Thu 12 or Fri 13 Nov (tentative). 7 or 8 Nov was the hope but is unlikely.'],['VIP night','Before opening. Proposed Tue 10 Nov.']],
+   note:'Until the date is fixed, everything goes out as "early November, date to come". Press and the waitlist can start now.',
+   channels:[['web','Waitlist on website'],['social','Instagram bio link'],['mail','Email'],['press','Press pitches']],
+   owners:['Yabi','Rank My Business','To assign'],
+   todo:['Waitlist sign-up on the website and Instagram bio','Send the influencer and VIP client lists to the team','Application form for influential people outside fragrance','Pitch Concrete Playground, Broadsheet and precinct media: "early November, date to come"','Order gift boxes: 100 for opening plus the VIP boxes','Check queue and footpath rules with City of Stonnington','Check if free drinks need a liquor licence; book RSA staff','Build every discount for the season in Shopify ahead of time'],
+   decide:['Final opening date','How many VIP boxes, and are they the same as the opening box','Who builds the Shopify discounts and exclusions']
+ },
+ { id:'vip', name:'VIP night', icon:'spark', c:'--vip', tentative:true,
+   when:'Proposed Tue 10 Nov · evening', start:'2026-11-10', end:'2026-11-10',
+   sum:'A private evening for about 200: fragrance people, influencers and our best clients.',
+   leaves:['200 guests','Host + 2 speakers','DJ / live music','Champagne','Gift box'],
+   what:'A private evening in the new store before the public sees it. Around 200 guests: fragrance creators and enthusiasts, our VIP clients, and a few people with big followings outside fragrance. A host runs the night. Yabi speaks, and a second speaker takes guests through the fragrances on show. Live music or a DJ, free-flowing champagne, other drinks and small bites. Every guest leaves with a complimentary box. Our media team covers the whole night.',
+   why:'This night makes the content that fills the line on opening day. Every story and reel posted from the room tells people the doors open in two days.',
+   terms:[['Guests','About 200'],['Run of show','Host, Yabi speaks, then the fragrance presentation'],['Music','DJ or live music'],['Drinks','Free-flowing champagne, other drinks, small bites'],['Take-home','Complimentary box for every guest'],['Paid creators','In-store gift voucher, in return for agreed posts']],
+   note:'Influencer deal in writing before the night: 1 reel and 3 stories, collab tag with @khrishaperfumery, #ad on paid posts, and 30 days for us to reuse their content.',
+   flags:['About 200 people in roughly 150 sqm needs a capacity check. Two arrival times, 6:00 and 7:30, is one way to handle it.'],
+   channels:[['people','Personal invitations'],['mail','VIP client email + RSVP'],['web','Application form'],['social','Guests posting on the night'],['cam','Media team']],
+   owners:['Yabi','Rank My Business','Media team'],
+   showcase:true,
+   todo:['Lock the date','Confirm the host and the second speaker','Book the DJ or musicians','Book drinks, champagne and catering','Send invitations with an RSVP that we approve','Agree influencer deliverables in writing','Media brief: arrivals, speeches, fragrance table, the boxes','Final guest list and run sheet by Fri 6 Nov'],
+   decide:['Date','Voucher value for paid creators','Capacity plan for 200 guests']
+ },
+ { id:'opening', name:'Opening day', icon:'door', c:'--open', tentative:true,
+   when:'Thu 12 or Fri 13 Nov · tentative', start:'2026-11-12', end:'2026-11-13',
+   sum:'Doors open to everyone. The first 100 get a gift box, the first 50 also get $50 off.',
+   leaves:['Line outside','100 gift boxes','50 × $50 vouchers','Press','Drinks + bites'],
+   what:'The public opening at 555B Chapel Street. The aim is simple: a line of people on the footpath. The first 100 customers through the door get a gift box worth $100, with samples, small goodies and items we don\'t sell. The first 50 also get a $50 voucher to use that day on a spend of $250 or more. Complimentary drinks and small bites through the day. Our media team films and photographs, with Chapel Street\'s precinct media, Broadsheet and Concrete Playground invited.',
+   why:'A line on Chapel Street is the photo we want. It tells the street, the press and everyone who follows us that this is the place to visit.',
+   terms:[['Gift box','First 100 customers. Valued at $100.'],['Voucher','First 50 customers. $50 off.'],['Minimum spend','$250'],['Valid','Same day only, in store'],['Counting','Numbered cards at the door (suggested)'],['Most it can cost','$2,500 in vouchers plus 100 boxes']],
+   flags:['Assumed: customers 1 to 50 get the voucher and the box, 51 to 100 get the box only. Confirm.','Saturday 14 Nov has far more foot traffic on Chapel Street. Worth one more look before the date is locked.'],
+   note:'Promotion is mostly organic: Instagram and TikTok countdown, VIP night content, email to the whole list, press and window signage. Paid ads for opening are still open.',
+   channels:[['social','Organic social countdown'],['mail','Email to full list'],['press','Broadsheet, Concrete Playground'],['pin','Chapel Street precinct media'],['store','Window signage'],['cam','Media team']],
+   owners:['Yabi','Rank My Business','Media team','Store team'],
+   todo:['Announce the date the moment it is fixed','Print numbered cards for the first 100','Roster extra staff for the day','Brief staff on voucher rules at the till','Queue barriers, if council allows them','Drinks and bites order','Shot list: the line, the doors opening, first customers'],
+   decide:['12 or 13 Nov (or Sat 14)','Paid ads for opening, or organic only']
+ },
+ { id:'clearance', name:'Clearance', icon:'tag', c:'--clear',
+   when:'Fri 20 – Mon 30 Nov', start:'2026-11-20', end:'2026-11-30',
+   sum:'35% to 40% off selected stock, online and in store. Kept separate from Black Friday.',
+   leaves:['35–40% off','Online + in store','No stacking','Cash flow'],
+   what:'A clear-out of slower stock at 35% to 40% off. It starts three days before Black Friday and runs to the end of the month. These products sit in their own clearance section with a set discount. Black Friday\'s 20% does not apply on top, and no promotions overlap.',
+   why:'Turn slow stock into cash and free up shelf space before December.',
+   terms:[['Discount','35% to 40%, set per product'],['Online','Outlet collection on the website'],['In store','One clearly marked area'],['Stacking','None. Black Friday excludes these items.'],['Price display','Original price shown crossed out']],
+   note:'Reuse the EOFY setup: original price into compare-at, sale price rounded to the dollar, product into the Outlet collection. Black Friday then excludes that collection.',
+   flags:['Keep the in-store clearance to one area so the rest of a brand-new floor still feels full price.'],
+   channels:[['mega','Ads'],['mail','Email'],['web','Website banner'],['store','In-store area']],
+   owners:['Yabi','Rank My Business','To assign'],
+   todo:['Choose the products and the discount for each','Load prices and the Outlet collection by Thu 19 Nov','Signage for the in-store area','Check Black Friday excludes every clearance item'],
+   decide:['Product list and discount per product']
+ },
+ { id:'blackfriday', name:'Black Friday', icon:'pct', c:'--bf',
+   when:'Mon 23 – Mon 30 Nov', start:'2026-11-23', end:'2026-11-30',
+   sum:'20% off storewide, online and in store. Our biggest paid push of the year.',
+   leaves:['20% storewide','Meta ads','Reels as ads','A few influencers'],
+   what:'20% off storewide for eight days, in store and online. Samples, discovery sets and clearance items are excluded, with more exclusions to come. This is where we spend on Meta: ads, our reels promoted as ads, and a handful of influencer collaborations. Most of the content comes from us.',
+   why:'Big sales week, while Chapel Street is still fresh in people\'s minds from opening.',
+   terms:[['Offer','20% off storewide'],['Dates','Mon 23 to Mon 30 Nov. Black Friday is Fri 27, Cyber Monday Mon 30.'],['Excluded','Samples, discovery sets, clearance items. More to come.'],['Where','Online and in store']],
+   note:'Exclusions final by Fri 6 Nov. The ads and the emails depend on which products we can show.',
+   flags:['Some distributor agreements may limit discounting on certain brands. Check before the exclusion list is final.'],
+   channels:[['mega','Meta ads'],['social','Reels promoted as ads'],['people','Influencer collaborations'],['mail','Email series'],['store','In store']],
+   owners:['Rank My Business','Yabi'],
+   todo:['Lock the exclusion list','Set the Meta budget','Brief creative, using opening footage','Pick the influencers','Build the discount with exclusions; test checkout','Schedule the email series'],
+   decide:['Final exclusions','Meta budget','Which influencers']
+ },
+ { id:'gifting', name:'December gifting', icon:'gift', c:'--gift',
+   when:'Tue 1 – Thu 24 Dec', start:'2026-12-01', end:'2026-12-24',
+   sum:'Full price. Gifts, gift boxes and free engraving.',
+   leaves:['Gift boxes','Free engraving','Gift ideas','Full price'],
+   what:'From 1 December we stop talking about discounts and start talking about gifts. Gift boxes, gift ideas and complimentary engraving. The content shows the wrapping, the engraving and the giving.',
+   why:'Sell at full price through the biggest gifting month of the year.',
+   terms:[['Engraving','Complimentary'],['Gift boxes','Available all month'],['Online','Last order date for Christmas delivery. Confirm with Australia Post; usually mid-December.'],['In store','Through to 24 Dec']],
+   flags:['Free engraving needs a capacity check: who engraves, how many bottles a day, and how long each one takes.'],
+   channels:[['social','Organic social'],['mail','Gift guide emails'],['mega','Gifting ads'],['store','In store']],
+   owners:['Rank My Business','Store team','Yabi'],
+   todo:['Work out engraving capacity','Gift guide emails','Last-order-date banner on the website','Gift box stock check','Set Christmas trading hours'],
+   decide:['Christmas trading hours','Engraving turnaround time']
+ },
+ { id:'boxing', name:'Boxing Day', icon:'box', c:'--boxing',
+   when:'Sat 26 – Sun 27 Dec', start:'2026-12-26', end:'2026-12-27',
+   sum:'$50 off a spend of $300 or more. Email and ads only. Nothing on our page.',
+   leaves:['$50 off $300+','2 days only','Email + ads','No organic posts'],
+   what:'Two days. $50 off any order of $300 or more, online and in store. We do not post it on our Instagram or Facebook page. It reaches people through email and ads only.',
+   why:'A last round of sales to close the year, without turning our feed into a sale feed.',
+   terms:[['Offer','$50 off'],['Minimum spend','$300'],['Dates','Sat 26 and Sun 27 Dec only'],['Where','Online and in store'],['Promotion','Email and ads. No organic posts.']],
+   note:'Ads can run as unpublished posts, so they reach people without appearing on our page grid.',
+   channels:[['mail','Email'],['mega','Ads (unpublished posts)'],['store','In store']],
+   owners:['Rank My Business','Store team'],
+   todo:['Build the discount with start and end times','Schedule the email for the morning of 26 Dec','Ad creative','Brief staff'],
+   decide:['Does it combine with clearance items (assumed no)']
+ }
+];
+
+const GROUPS = [
+ {id:'launch', n:'Part 1', name:'Launch & events', icon:'spark', c:'--open', when:'Now → Fri 13 Nov', items:['groundwork','vip','opening'],
+  sum:'Open Chapel Street, our home base, with a private night first and a line outside the door two days later.'},
+ {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Fri 20 – Mon 30 Nov', items:['clearance','blackfriday'],
+  sum:'Our biggest sales week of the year, with a separate clearance running alongside to turn slow stock into cash.'},
+ {id:'giftpart', n:'Part 3', name:'Gifting season', icon:'gift', c:'--gift', when:'Tue 1 – Thu 24 Dec', items:['gifting'],
+  sum:'Back to full price. Gifts, gift boxes and free engraving all the way to Christmas Eve.'},
+ {id:'boxpart', n:'Part 4', name:'Boxing Day', icon:'box', c:'--boxing', when:'Sat 26 – Sun 27 Dec', items:['boxing'],
+  sum:'A quiet close to the year. Email and ads only.'}
+];
+
+const GOALS = [
+ ['spark','--vip','Goal one','Open Chapel Street with a line outside the door, media in the room and people talking about it.'],
+ ['pct','--bf','Goal two','Make Black Friday our biggest sales week of the year, and clear slow stock for cash at the same time.'],
+ ['gift','--gift','Goal three','Sell through December at full price on gifting, then close the year quietly with Boxing Day.']
+];
+const RULES = [
+ 'Offers never stack. Clearance, Black Friday and Boxing Day stay separate.',
+ 'Samples and discovery sets are never in the Black Friday discount.',
+ 'Boxing Day is never posted on our own page.',
+ 'Sales targets are held separately and stay out of this plan.'
+];
+
+const HOUSES = [
+ {h:'The Spirit of Dubai', o:'Dubai', f:[['Turath'],['Meydan'],['Narjesi Fleur'],['Durra Ambre'],['Bahar']]},
+ {h:'Kajal', o:'Paris', f:[['Lamar'],['Lamar Noir'],['Dahab Absolute','Confirm name'],['Jihan']]},
+ {h:'Oman Luxury', o:'Oman', f:[['Caden'],['Flowerlush'],['Nasaj']]},
+ {h:'Pantheon Roma', o:'Rome', f:[['Annone'],['Annone Supremo']]},
+ {h:'Stéphane Humbert Lucas 777', o:'Paris', f:[['Sand Dance'],['God of Fire'],['Venom Incarnat']]},
+ {h:'Gritti', o:'Venice', f:[['Mango Aoud'],['Tutù','Rosa or Blanc?'],['Chantilly'],['Violet Venom']]},
+ {h:'Sordora', o:'', f:[], todo:'Picks to come. Add them here before the presentation is written.'}
+];
+
+const WEEKS = [
+ {d:'Mon 12 Oct', now:true, t:[
+  ['Lock VIP night and opening dates','Yabi','groundwork'],
+  ['Decide who builds the Shopify discounts','Yabi','groundwork'],
+  ['Brief Rank My Business on the full plan','Yabi','groundwork'],
+  ['Waitlist sign-up live on website and Instagram bio','Rank My Business','groundwork'],
+  ['Send influencer and VIP client lists to the team','Yabi','vip']]},
+ {d:'Mon 19 Oct', t:[
+  ['Pitch Concrete Playground, Broadsheet and precinct media','Yabi','opening'],
+  ['Order gift boxes and contents','Yabi','groundwork'],
+  ['Book host, DJ and catering','Yabi','vip'],
+  ['Check council queue rules and liquor licence','Yabi','groundwork'],
+  ['Application form live for non-fragrance guests','Rank My Business','vip']]},
+ {d:'Mon 26 Oct', t:[
+  ['VIP invitations out, with RSVP','Yabi','vip'],
+  ['Influencer agreements signed off in writing','Yabi','vip'],
+  ['Announce opening date on social and email','Rank My Business','opening'],
+  ['Media team shot list for both events','Yabi','vip'],
+  ['Set Meta budget for each part','Yabi','blackfriday']]},
+ {d:'Mon 2 Nov', t:[
+  ['Black Friday exclusions final by Fri 6 Nov','Yabi','blackfriday'],
+  ['Black Friday creative brief to Rank My Business','Yabi','blackfriday'],
+  ['Opening countdown posts','Media team','opening'],
+  ['Staff briefing: vouchers, numbered cards, queue','Store team','opening'],
+  ['VIP final numbers and run sheet','Yabi','vip']]},
+ {d:'Mon 9 Nov', events:[['vip','VIP night · Tue 10 Nov'],['opening','Opening · Thu 12 or Fri 13']], t:[
+  ['Post VIP content within 24 hours','Media team','vip'],
+  ['Thank-you message to every VIP guest','Yabi','vip'],
+  ['Opening day email to full list','Rank My Business','opening'],
+  ['Clearance list and prices ready for Thu 19 Nov','To assign','clearance']]}
+];
+
+const DECISIONS = [];
+
+const OWNERS = [
+ {n:'Rank My Business', a:'R', c:'--boxing', role:'Agency', jobs:[['Every email, every part','groundwork'],['Meta ads and reels as ads','blackfriday'],['Waitlist and application forms','groundwork'],['VIP RSVP emails','vip'],['Boxing Day email and ads','boxing']]},
+ {n:'Yabi', a:'Y', c:'--vip', role:'Influencers, press, events', jobs:[['Influencer list and agreements','vip'],['VIP client list and approvals','vip'],['Press and precinct media','opening'],['Both events end to end','opening'],['Speaking at VIP night','vip']]},
+ {n:'Media team', a:'M', c:'--open', role:'Photo and video', jobs:[['Full coverage of VIP night','vip'],['The line and the doors opening','opening'],['Content posted within 24 hours','vip'],['Footage for Black Friday ads','blackfriday']]},
+ {n:'Store team', a:'S', c:'--clear', role:'The floor', jobs:[['Queue and numbered cards','opening'],['Voucher rules at the till','opening'],['Clearance area in store','clearance'],['Engraving through December','gifting']]},
+ {n:'To assign', a:'?', c:'--ground', role:'Needs a name', unassigned:true, jobs:[['Shopify discounts and exclusions','groundwork'],['Clearance prices and Outlet collection','clearance']]}
+];
+
+const byId = id => P.find(p => p.id === id);
+const groupOf = id => GROUPS.find(g => g.items.includes(id));
+const store = {
+  get(){ try { return JSON.parse(localStorage.getItem('chapel-season-ticks') || '{}'); } catch(e){ return {}; } },
+  set(o){ try { localStorage.setItem('chapel-season-ticks', JSON.stringify(o)); } catch(e){} }
+};
+let ticks = store.get();
+const tickBox = (key, colourVar, label) => `<input type="checkbox" class="tick" id="${key}" data-k="${key}" style="--k:${colourVar}" ${ticks[key]?'checked':''} aria-label="${label.replace(/"/g,'&quot;')}">`;
+document.addEventListener('change', e => {
+  const k = e.target.dataset && e.target.dataset.k; if(!k) return;
+  ticks[k] = e.target.checked; store.set(ticks);
+  document.querySelectorAll(`[data-k="${CSS.escape(k)}"]`).forEach(el => { if(el !== e.target) el.checked = e.target.checked; });
+});
+
+/* hero */
+document.getElementById('facts').innerHTML = [
+ ['vip','spark','VIP night','Tue 10 Nov'],['open','door','Opening','12 or 13 Nov'],['bf','pct','Black Friday','23 – 30 Nov'],['gift','gift','Gifting','1 – 24 Dec'],['boxing','box','Boxing Day','26 – 27 Dec']
+].map(([c,i,l,d]) => `<span class="fact"><span class="dot" style="background:var(--${c}-t);color:var(--${c})">${ic(i)}</span><b>${l}</b><span class="mono">${d}</span></span>`).join('');
+document.getElementById('goals').innerHTML = GOALS.map(([i,c,l,t]) => `<div class="goal"><div class="eyebrow"><svg class="i" style="color:${v(c)}"><use href="#i-${i}"/></svg>${l}</div><p>${t}</p></div>`).join('');
+document.getElementById('rules').innerHTML = RULES.map(r => `<span>${ic('check')}${r}</span>`).join('');
+document.getElementById('spectrum').innerHTML = P.map(p => {
+  const days = Math.max(2,(new Date(p.end)-new Date(p.start))/864e5+1);
+  return `<i style="flex:${days};background:${v(p.c)}"></i>`; }).join('');
+
+/* tree */
+const tree = document.getElementById('tree');
+tree.innerHTML = GROUPS.map((g,gi) => `<div class="band" style="--c:${v(g.c)};--t:${v(g.c+'-t')};animation-delay:${60+gi*70}ms">
+  <div class="band-head">
+    <div class="top"><span class="ico">${ic(g.icon)}</span><span class="eyebrow">${g.n}</span></div>
+    <h3>${g.name}</h3><div class="mono when">${g.when}</div><p>${g.sum}</p>
+  </div>
+  <div class="items">${g.items.map(id => { const p = byId(id); return `<button class="node" type="button" data-id="${p.id}" aria-haspopup="dialog" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
+    <div class="top"><span class="ico">${ic(p.icon)}</span>${p.tentative?'<span class="tentative">Tentative</span>':''}</div>
+    <div><h4>${p.name}</h4><div class="mono when">${p.when}</div></div>
+    <p class="sum">${p.sum}</p>
+    <div class="leaves">${p.leaves.map(l=>`<span class="leaf">${l}</span>`).join('')}</div>
+    <span class="open">Open brief ${ic('right')}</span></button>`; }).join('')}</div>
+</div>`).join('');
+tree.querySelectorAll('.node').forEach(b => b.addEventListener('click', () => openSheet(b.dataset.id, b)));
+
+/* calendar (used on screen and in print) */
+function buildGantt(){
+  const START = Date.UTC(2026,9,5), DAYS = 88, pct = ms => ((ms-START)/864e5)/DAYS*100;
+  const d = s => { const [y,m,dd] = s.split('-').map(Number); return Date.UTC(y,m-1,dd); };
+  const mons = ['5 Oct','12 Oct','19 Oct','26 Oct','2 Nov','9 Nov','16 Nov','23 Nov','30 Nov','7 Dec','14 Dec','21 Dec','28 Dec'].slice(0,12);
+  const months = {0:'October',4:'November',9:'December'};
+  const h = `<div></div><div class="weeks">${mons.map((m,i)=>`<span style="left:${i*7/DAYS*100}%"><b>${months[i]||'&nbsp;'}</b>${m}</span>`).join('')}</div>`;
+  const rows = {
+    groundwork:[[['2026-10-10','2026-11-09','Lists, press, boxes, permits']]],
+    vip:[[['2026-11-10','2026-11-10','',true]],[['2026-11-10','Tue 10 · proposed']]],
+    opening:[[['2026-11-12','2026-11-13','',true]],[['2026-11-12','Thu 12 / Fri 13']]],
+    clearance:[[['2026-11-20','2026-11-30','35–40% off']]],
+    blackfriday:[[['2026-11-23','2026-11-30','20% off']],[['2026-11-27','Black Friday',1],['2026-11-30','Cyber Mon']]],
+    gifting:[[['2026-12-01','2026-12-24','Gifts, boxes, free engraving']],[['2026-12-16','Last post for Christmas ~mid Dec (confirm)',1]]],
+    boxing:[[['2026-12-26','2026-12-27','']],[['2026-12-26','$50 off $300+',1]]]
+  };
+  let body = '';
+  GROUPS.forEach(g => {
+    body += `<div class="g-group" style="--c:${v(g.c)}">${g.n} · ${g.name}</div>`;
+    g.items.forEach(id => {
+      const p = byId(id), [bars, miles=[]] = rows[id];
+      body += `<div class="g-label"><i class="sw" style="background:${v(p.c)}"></i>${p.name}</div><div class="track">`;
+      bars.forEach(([s,e,l,soft]) => {
+        const left = pct(d(s)), w = Math.max(.9, pct(d(e)+864e5) - left);
+        body += `<div class="bar${soft?' soft':''}" style="left:${left}%;width:${w}%;background-color:${v(p.c)}">${w>9?l:''}</div>`;
+      });
+      miles.forEach(([s,l,r]) => { const left = pct(d(s)+432e5);
+        body += `<span class="mile" style="left:${left}%;background:${v(p.c)}"></span><span class="mile-l${r?' r':''}" style="left:${left}%">${l}</span>`; });
+      body += `</div>`;
+    });
+  });
+  const today = pct(d('2026-10-10')+432e5);
+  return h + `<div class="g-body">${body}<div class="today" style="left:calc(var(--lab) + (100% - var(--lab)) * ${today/100})"><span>Today</span></div></div>`;
+}
+document.getElementById('gantt').innerHTML = buildGantt();
+
+/* houses */
+document.getElementById('houses').innerHTML = HOUSES.map(h => h.todo
+  ? `<div class="house todo"><div><div class="eyebrow">House</div><h3>${h.h}</h3></div><p>${h.todo}</p></div>`
+  : `<div class="house"><div><div class="eyebrow">${h.o}</div><h3>${h.h}</h3></div><ul>${h.f.map(([n,c])=>`<li>${ic('bottle')}<span>${n}</span>${c?`<span class="confirm">${c}</span>`:''}</li>`).join('')}</ul></div>`).join('');
+
+/* run sheet */
+document.getElementById('weeksheet').innerHTML = WEEKS.map((w,wi) => `<article class="wk${w.now?' now':''}">
+  <header><span class="eyebrow">Week of</span><h3>${w.d}</h3></header>
+  ${(w.events||[]).map(([id,l])=>{const p=byId(id);return `<div class="event-row" style="background:${v(p.c+'-t')};color:${v(p.c)}">${ic(p.icon)}${l}</div>`}).join('')}
+  ${w.t.map(([t,who,ph],ti) => { const p = byId(ph), k = `w${wi}-${ti}`; return `<div class="task">${tickBox(k, v(p.c), t)}<label for="${k}"><span>${t}</span><span class="meta"><i class="pdot" style="background:${v(p.c)}"></i><span class="who">${who}</span></span></label></div>`; }).join('')}
+</article>`).join('');
+
+/* decisions */
+if (document.getElementById('decisions')) document.getElementById('decisions').innerHTML = DECISIONS.map(([q,s,who,by],i) => {
+  const k = `d${i}`;
+  return `<div class="dec">${tickBox(k,'var(--ink)', 'Decided: '+q)}<label class="q" for="${k}"><span>${q}</span><small>${s}</small></label><div class="r"><span class="who">${who}</span><span class="mono">Needed by ${by}</span></div></div>`;
+}).join('');
+
+/* owners */
+document.getElementById('ownersGrid').innerHTML = OWNERS.map(o => `<article class="owner${o.unassigned?' unassigned':''}">
+  <div class="top"><span class="av" style="background:${v(o.c+'-t')};color:${v(o.c)}">${o.a}</span><div><h3>${o.n}</h3><div class="role">${o.role}</div></div></div>
+  <ul>${o.jobs.map(([j,ph])=>`<li><i class="pdot" style="background:${v(byId(ph).c)}"></i><span>${j}</span></li>`).join('')}</ul>
+</article>`).join('');
+
+/* ---------- print version: 4 condensed A4 pages ---------- */
+(function(){
+  const top = (title) => `<div class="p-top"><span class="eyebrow">Khrisha Perfumery · Chapel Street · November &amp; December 2026</span><span class="eyebrow">${title}</span></div>`;
+  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 10 Oct 2026 · page ${n} of 4</span></div>`;
+  const item = p => `<div class="p-item" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
+    <div class="col">
+      <h3>${p.name}<span class="mono">${p.when}</span></h3>
+      <p>${p.sum}</p>
+      <div class="p-kv">${p.terms.map(([k,val])=>`<div class="k">${k}</div><div>${val}</div>`).join('')}</div>
+      ${p.note?`<div class="p-note">${p.note}</div>`:''}
+    </div>
+    <div class="col">
+      <div class="p-label">Jobs · ${p.owners.join(', ')}</div>
+      <ul class="p-list">${p.todo.map(t=>`<li><i class="box"></i><span>${t}</span></li>`).join('')}</ul>
+      ${(p.flags||[]).map(f=>`<div class="p-flag">${f}</div>`).join('')}
+      ${p.decide.length?`<div class="p-flag"><b>To decide:</b> ${p.decide.join(' · ')}</div>`:''}
+    </div></div>`;
+  const head = g => `<div class="p-h" style="--c:${v(g.c)};--t:${v(g.c+'-t')}"><span class="ico">${ic(g.icon)}</span><div><div class="eyebrow">${g.n}</div><h2>${g.name}</h2></div><span class="when">${g.when}</span></div>`;
+
+  const page1 = `<div class="pg">${top('Overview')}
+    <div><h1 class="p-title">November &amp; <em>December</em> plan</h1></div>
+    <p class="p-lead">Four parts, in date order. The Chapel Street launch and its two events. Black Friday with the clearance. The gifting season. Boxing Day to close the year. Detail for each part is on pages 2 and 3. Next steps and owners are on page 4.</p>
+    <div class="p-goals">${GOALS.map(([i,c,l,t])=>`<div><span class="eyebrow">${l}</span><span>${t}</span></div>`).join('')}</div>
+    <div class="p-tree">${GROUPS.map(g=>`<div class="p-band" style="--c:${v(g.c)}"><div><div class="eyebrow">${g.n}</div><h3>${g.name}</h3><div class="when">${g.when}</div></div>
+      <div class="p-sub" style="grid-template-columns:repeat(${g.items.length===1?1:3},1fr)">${g.items.map(id=>{const p=byId(id);return `<div style="--c:${v(p.c)};--t:${v(p.c+'-t')}"><b>${p.name}</b><span class="mono">${p.when}</span><span>${p.sum}</span></div>`}).join('')}</div></div>`).join('')}</div>
+    <div class="gantt-wrap"><div class="gantt">${buildGantt()}</div></div>
+    <div class="p-rules">${RULES.map(r=>`<div>${r}</div>`).join('')}</div>
+    ${foot(1)}</div>`;
+
+  const L = GROUPS[0];
+  const page2 = `<div class="pg">${top('Part 1')}${head(L)}
+    <p class="p-lead">${L.sum} VIP night comes first so its content fills the line on opening day.</p>
+    ${L.items.map(id=>item(byId(id))).join('')}
+    <div class="p-label">On show at VIP night</div>
+    <div class="p-houses">${HOUSES.map(h=>`<div><b>${h.h}</b>${h.f.length?h.f.map(([n,c])=>n+(c?` (${c.toLowerCase()})`:'')).join(', '):'Picks to come'}</div>`).join('')}</div>
+    ${foot(2)}</div>`;
+
+  const page3 = `<div class="pg">${top('Parts 2 to 4')}
+    ${head(GROUPS[1])}${GROUPS[1].items.map(id=>item(byId(id))).join('')}
+    ${head(GROUPS[2])}${item(byId('gifting'))}
+    ${head(GROUPS[3])}${item(byId('boxing'))}
+    ${foot(3)}</div>`;
+
+  const page4 = `<div class="pg">${top('Next steps')}
+    <div class="p-h"><h2>The next five weeks</h2></div>
+    <div class="p-weeks">${WEEKS.map(w=>`<div><span class="eyebrow">Week of</span><h4>${w.d}</h4>
+      ${(w.events||[]).map(([id,l])=>{const p=byId(id);return `<div class="ev" style="background:${v(p.c+'-t')};color:${v(p.c)}">${l}</div>`}).join('')}
+      <ul class="p-list">${w.t.map(([t,who])=>`<li><i class="box"></i><span>${t}<span class="w">${who}</span></span></li>`).join('')}</ul></div>`).join('')}</div>
+    <div class="p-h"><h2>Who runs what</h2></div>
+    <div class="p-owners">${OWNERS.map(o=>`<div style="--c:${v(o.c)};--t:${v(o.c+'-t')}"><b>${o.n}</b><span class="eyebrow" style="font-size:6pt">${o.role}</span><ul>${o.jobs.map(([j])=>`<li>${j}</li>`).join('')}</ul></div>`).join('')}</div>
+    ${foot(4)}</div>`;
+
+  document.getElementById('print').innerHTML = page1 + page2 + page3 + page4;
+})();
+
+/* sheet */
+const layer = document.getElementById('layer'), sheet = document.getElementById('sheet');
+let lastTrigger = null;
+const order = P.map(p=>p.id);
+function sheetHTML(p){
+  const i = order.indexOf(p.id), prev = P[(i-1+P.length)%P.length], next = P[(i+1)%P.length], g = groupOf(p.id);
+  const sec = (label, inner) => `<div class="blk"><div class="eyebrow">${label}</div>${inner}</div>`;
+  let h = `<div class="sh-head" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
+    <div class="sh-top"><span class="ico">${ic(p.icon)}</span><span class="mono step">${g.n} · ${g.name}</span>${p.tentative?'<span class="tentative" style="margin-left:6px">Tentative</span>':''}
+    <button class="x" type="button" id="closeSheet" aria-label="Close">${ic('x')}</button></div>
+    <h2 id="sh-title">${p.name}</h2><div class="when mono">${p.when}</div></div>
+  <div class="sh-body" style="--c:${v(p.c)}">`;
+  h += sec('What happens', `<p>${p.what}</p>`);
+  h += sec('Why we are doing it', `<p>${p.why}</p>`);
+  h += sec('The detail', `<div class="kv">${p.terms.map(([k,val])=>`<div class="k">${k}</div><div>${val}</div>`).join('')}</div>${p.note?`<div class="note">${ic('info')}<span>${p.note}</span></div>`:''}`);
+  if (p.showcase) h += sec('On show', `<div class="sh-houses">${HOUSES.map(x=>`<div class="sh-house"><b>${x.h}</b><span>${x.f.length?x.f.map(([n,c])=>n+(c?` (${c.toLowerCase()})`:'')).join(', '):'Picks to come'}</span></div>`).join('')}</div>`);
+  if (p.flags) h += sec('Watch out for', p.flags.map(f=>`<div class="flag">${ic('alert')}<span>${f}</span></div>`).join(''));
+  h += sec('Where it is promoted', `<div class="chips">${p.channels.map(([i,t])=>`<span class="chip">${ic(i)}${t}</span>`).join('')}</div>`);
+  h += sec('Who runs it', `<div class="chips">${p.owners.map(o=>`<span class="who" style="font-size:13px;padding:5px 11px">${o}</span>`).join('')}</div>`);
+  h += sec('Jobs', p.todo.map((t,ti)=>{const k=`${p.id}-${ti}`;return `<div class="task">${tickBox(k, v(p.c), t)}<label for="${k}"><span>${t}</span></label></div>`}).join(''));
+  h += sec('Still to decide', p.decide.map(d=>`<div class="flag">${ic('flag')}<span>${d}</span></div>`).join(''));
+  h += `</div><div class="sh-foot">
+    <button class="pager" type="button" data-go="${prev.id}">${ic('left')}<span>${prev.name}</span></button>
+    <button class="pager" type="button" data-go="${next.id}"><span>${next.name}</span>${ic('right')}</button></div>`;
+  return h;
+}
+function openSheet(id, trigger){
+  const p = byId(id); if(!p) return;
+  if (trigger) lastTrigger = trigger;
+  sheet.innerHTML = sheetHTML(p);
+  if (layer.hidden){
+    layer.hidden = false; layer.classList.remove('is-closing');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>layer.classList.add('is-open')));
+    document.documentElement.style.overflow = 'hidden';
+  }
+  sheet.focus({preventScroll:true});
+  try { history.replaceState(null,'','#'+id); } catch(e){}
+}
+function closeSheet(){
+  if (layer.hidden) return;
+  layer.classList.add('is-closing'); layer.classList.remove('is-open');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(() => { layer.hidden = true; layer.classList.remove('is-closing'); }, reduce ? 160 : 230);
+  document.documentElement.style.overflow = '';
+  try { history.replaceState(null,'',location.pathname + location.search); } catch(e){}
+  if (lastTrigger) lastTrigger.focus({preventScroll:true});
+}
+sheet.addEventListener('click', e => {
+  const go = e.target.closest('[data-go]');
+  if (go){ openSheet(go.dataset.go, tree.querySelector(`[data-id="${go.dataset.go}"]`)); sheet.querySelector('.sh-body').scrollTop = 0; return; }
+  if (e.target.closest('#closeSheet')) closeSheet();
+});
+document.getElementById('scrim').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => {
+  if (layer.hidden) return;
+  if (e.key === 'Escape') closeSheet();
+  if (e.key === 'Tab'){
+    const f = [...sheet.querySelectorAll('button, a, input')]; if(!f.length) return;
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length-1].focus(); }
+    else if (!e.shiftKey && document.activeElement === f[f.length-1]) { e.preventDefault(); f[0].focus(); }
+  }
+});
+const h0 = location.hash.slice(1); if (byId(h0)) openSheet(h0, tree.querySelector(`[data-id="${h0}"]`));
+</script>
+
+</html>
