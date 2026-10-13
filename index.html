@@ -298,7 +298,7 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
   .p-h .when{margin-left:auto; color:var(--c); font-family:var(--mono); font-size:7.6pt}
   .p-lead{color:var(--ink-2); font-size:8.2pt; max-width:none}
   .p-goals{display:grid; grid-template-columns:repeat(3,1fr); gap:3mm}
-  .p-goals div{background:#F5F5F7; border-radius:3mm; padding:2.6mm 3.2mm; display:grid; gap:1mm}
+  .p-goals div{background:#F5F5F7; border-radius:3mm; padding:2mm 3mm; display:grid; gap:1mm}
   .p-goals .eyebrow{font-size:6.2pt}
   .p-rules{display:grid; grid-template-columns:repeat(4,1fr); gap:2mm}
   .p-rules div{border:.25mm solid rgba(0,0,0,.12); border-radius:2.4mm; padding:2mm 2.4mm; font-size:7.4pt; color:var(--ink-2)}
@@ -322,9 +322,9 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
   .weeks{height:6.6mm}
   .weeks span{font-size:5.4pt; height:6.6mm; padding-left:1mm}
   .weeks span b{font-size:6.4pt}
-  .track{height:6.2mm}
-  .bar{top:2.6mm; bottom:.4mm; font-size:5.8pt; padding:0 2mm}
-  .mile{top:4.5mm; width:2mm; height:2mm; border-width:.35mm}
+  .track{height:5.4mm}
+  .bar{top:2.2mm; bottom:.3mm; font-size:5.8pt; padding:0 2mm}
+  .mile{top:3.9mm; width:2mm; height:2mm; border-width:.35mm}
   .mile-l{font-size:5.3pt; top:-.4mm}
   .today span{font-size:5.6pt; top:-3mm}
   .g-note{display:none}
@@ -412,7 +412,7 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
 
 <main class="wrap screen-only">
   <header class="hero">
-    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Sat 10 Oct 2026</div>
+    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Tue 13 Oct 2026</div>
     <h1>November &amp; <em>December</em></h1>
     <p class="lede">Our plan for the last two months of the year, in four parts. First the Chapel Street launch and its two events. Then Black Friday with the clearance. Then the gifting season. Boxing Day closes the year. Tap any card to open its full brief.</p>
     <div class="facts" id="facts"></div>
@@ -444,11 +444,11 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
   <section id="calendar" aria-labelledby="cal-h">
     <div class="head">
       <h2 id="cal-h">Calendar</h2>
-      <p>Week by week from today to the end of December, grouped into the four parts. Striped bars are tentative.</p>
+      <p>Week by week from today to the end of December, grouped into the four parts. Striped bars may change.</p>
     </div>
     <div class="gantt-wrap"><div class="gantt" id="gantt"></div>
       <div class="g-note">
-        <span><i class="key-soft"></i>Tentative date</span>
+        <span><i class="key-soft"></i>May change</span>
         <span><i class="key-mile"></i>Key day</span>
         <span><i style="width:14px;border-top:1.5px dashed #E0473D;display:inline-block"></i>Today</span>
       </div>
@@ -499,60 +499,60 @@ const v = n => `var(${n})`;
 
 const P = [
  { id:'groundwork', name:'Groundwork', icon:'clip', c:'--ground',
-   when:'Now → Mon 9 Nov', start:'2026-10-10', end:'2026-11-09',
+   when:'Now → Wed 11 Nov', start:'2026-10-10', end:'2026-11-11',
    sum:'Everything that has to be locked before the doors open.',
    leaves:['Waitlist','Guest lists','Press','Gift boxes','Permits'],
    what:'Four weeks to get the invitations out, the press pitched, the boxes made and the paperwork done. Most problems on an opening night are caused in these four weeks, so this stage gets the same attention as the events themselves.',
    why:'Walk into VIP week with a confirmed guest list, a confirmed opening date, boxes on the shelf and every discount already built in Shopify.',
-   terms:[['Opening','Thu 12 or Fri 13 Nov (tentative). 7 or 8 Nov was the hope but is unlikely.'],['VIP night','Before opening. Proposed Tue 10 Nov.']],
-   note:'Until the date is fixed, everything goes out as "early November, date to come". Press and the waitlist can start now.',
+   terms:[['VIP night','Thu 12 Nov, evening'],['Opening day','Sat 14 Nov, from the morning']],
+   note:'Both dates are now fixed. Press, the waitlist and the invitations can all go out with them.',
    channels:[['web','Waitlist on website'],['social','Instagram bio link'],['mail','Email'],['press','Press pitches']],
    owners:['Yabi','Rank My Business','To assign'],
-   todo:['Waitlist sign-up on the website and Instagram bio','Send the influencer and VIP client lists to the team','Application form for influential people outside fragrance','Pitch Concrete Playground, Broadsheet and precinct media: "early November, date to come"','Order gift boxes: 100 for opening plus the VIP boxes','Check queue and footpath rules with City of Stonnington','Check if free drinks need a liquor licence; book RSA staff','Build every discount for the season in Shopify ahead of time'],
-   decide:['Final opening date','How many VIP boxes, and are they the same as the opening box','Who builds the Shopify discounts and exclusions']
+   todo:['Waitlist sign-up on the website and Instagram bio','Send the influencer and VIP client lists to the team','Application form for influential people outside fragrance','Pitch Concrete Playground, Broadsheet and precinct media with both dates','Order 100 opening-day gifts and the VIP night purchase gifts','Check queue and footpath rules with City of Stonnington','Check if free drinks need a liquor licence; book RSA staff','Build every discount for the season in Shopify ahead of time'],
+   decide:['What goes in the $150 opening-day gift','Who builds the Shopify discounts and exclusions']
  },
- { id:'vip', name:'VIP night', icon:'spark', c:'--vip', tentative:true,
-   when:'Proposed Tue 10 Nov · evening', start:'2026-11-10', end:'2026-11-10',
+ { id:'vip', name:'VIP night', icon:'spark', c:'--vip',
+   when:'Thu 12 Nov · evening', start:'2026-11-12', end:'2026-11-12',
    sum:'A private evening for about 200: fragrance people, influencers and our best clients.',
-   leaves:['200 guests','Host + 2 speakers','DJ / live music','Champagne','Gift box'],
-   what:'A private evening in the new store before the public sees it. Around 200 guests: fragrance creators and enthusiasts, our VIP clients, and a few people with big followings outside fragrance. A host runs the night. Yabi speaks, and a second speaker takes guests through the fragrances on show. Live music or a DJ, free-flowing champagne, other drinks and small bites. Every guest leaves with a complimentary box. Our media team covers the whole night.',
+   leaves:['200 guests','$200 gift with purchase','Host + 2 speakers','DJ / live music','Champagne'],
+   what:'A private evening in the new store before the public sees it. Around 200 guests: fragrance creators and enthusiasts, our VIP clients, and a few people with big followings outside fragrance. A host runs the night. Yabi speaks, and a second speaker takes guests through the fragrances on show. Live music or a DJ, free-flowing champagne, other drinks and small bites. Every guest who buys on the night takes home a complimentary home diffuser or candle from Gritti or Casamorati, valued at $200. Our media team covers the whole night.',
    why:'This night makes the content that fills the line on opening day. Every story and reel posted from the room tells people the doors open in two days.',
-   terms:[['Guests','About 200'],['Run of show','Host, Yabi speaks, then the fragrance presentation'],['Music','DJ or live music'],['Drinks','Free-flowing champagne, other drinks, small bites'],['Take-home','Complimentary box for every guest'],['Paid creators','In-store gift voucher, in return for agreed posts']],
+   terms:[['Guests','About 200'],['Run of show','Host, Yabi speaks, then the fragrance presentation'],['Music','DJ or live music'],['Drinks','Free-flowing champagne, other drinks, small bites'],['Gift with purchase','Gritti or Casamorati home diffuser or candle, valued at $200, for every guest who buys on the night'],['Paid creators','In-store gift voucher, in return for agreed posts']],
    note:'Influencer deal in writing before the night: 1 reel and 3 stories, collab tag with @khrishaperfumery, #ad on paid posts, and 30 days for us to reuse their content.',
    flags:['About 200 people in roughly 150 sqm needs a capacity check. Two arrival times, 6:00 and 7:30, is one way to handle it.'],
    channels:[['people','Personal invitations'],['mail','VIP client email + RSVP'],['web','Application form'],['social','Guests posting on the night'],['cam','Media team']],
    owners:['Yabi','Rank My Business','Media team'],
    showcase:true,
-   todo:['Lock the date','Confirm the host and the second speaker','Book the DJ or musicians','Book drinks, champagne and catering','Send invitations with an RSVP that we approve','Agree influencer deliverables in writing','Media brief: arrivals, speeches, fragrance table, the boxes','Final guest list and run sheet by Fri 6 Nov'],
-   decide:['Date','Voucher value for paid creators','Capacity plan for 200 guests']
+   todo:['Order Gritti and Casamorati diffusers and candles for the purchase gift','Confirm the host and the second speaker','Book the DJ or musicians','Book drinks, champagne and catering','Send invitations with an RSVP that we approve','Agree influencer deliverables in writing','Media brief: arrivals, speeches, fragrance table, the gifts','Final guest list and run sheet by Fri 6 Nov'],
+   decide:['How many diffusers and candles to hold','Voucher value for paid creators','Capacity plan for 200 guests']
  },
- { id:'opening', name:'Opening day', icon:'door', c:'--open', tentative:true,
-   when:'Thu 12 or Fri 13 Nov · tentative', start:'2026-11-12', end:'2026-11-13',
-   sum:'Doors open to everyone. The first 100 get a gift box, the first 50 also get $50 off.',
-   leaves:['Line outside','100 gift boxes','50 × $50 vouchers','Press','Drinks + bites'],
-   what:'The public opening at 555B Chapel Street. The aim is simple: a line of people on the footpath. The first 100 customers through the door get a gift box worth $100, with samples, small goodies and items we don\'t sell. The first 50 also get a $50 voucher to use that day on a spend of $250 or more. Complimentary drinks and small bites through the day. Our media team films and photographs, with Chapel Street\'s precinct media, Broadsheet and Concrete Playground invited.',
+ { id:'opening', name:'Opening day', icon:'door', c:'--open',
+   when:'Sat 14 Nov · from the morning', start:'2026-11-14', end:'2026-11-14',
+   sum:'Doors open to everyone on Saturday morning. The first 100 get a $150 gift, the first 50 also get a $100 voucher.',
+   leaves:['Line outside','100 × $150 gifts','50 × $100 vouchers','Press','Drinks + bites'],
+   what:'The public opening at 555B Chapel Street, on Saturday morning when the street is busiest. The aim is simple: a line of people on the footpath. The first 100 customers through the door get a free gift valued at $150. The first 50 also get a $100 voucher to spend in store, on a minimum spend of $300. Complimentary drinks and small bites through the day. Our media team films and photographs, with Chapel Street\'s precinct media, Broadsheet and Concrete Playground invited.',
    why:'A line on Chapel Street is the photo we want. It tells the street, the press and everyone who follows us that this is the place to visit.',
-   terms:[['Gift box','First 100 customers. Valued at $100.'],['Voucher','First 50 customers. $50 off.'],['Minimum spend','$250'],['Valid','Same day only, in store'],['Counting','Numbered cards at the door (suggested)'],['Most it can cost','$2,500 in vouchers plus 100 boxes']],
-   flags:['Assumed: customers 1 to 50 get the voucher and the box, 51 to 100 get the box only. Confirm.','Saturday 14 Nov has far more foot traffic on Chapel Street. Worth one more look before the date is locked.'],
+   terms:[['Free gift','First 100 customers. Valued at $150.'],['Voucher','First 50 customers. $100 to spend in store.'],['Minimum spend','$300'],['Counting','Numbered cards at the door (suggested)'],['Most it can cost','$5,000 in vouchers plus 100 gifts']],
+   flags:['Assumed: customers 1 to 50 get the voucher and the gift, 51 to 100 get the gift only. Confirm.','Is the $100 voucher for opening day only, or can it be used on a later visit? A later visit brings people back.'],
    note:'Promotion is mostly organic: Instagram and TikTok countdown, VIP night content, email to the whole list, press and window signage. Paid ads for opening are still open.',
    channels:[['social','Organic social countdown'],['mail','Email to full list'],['press','Broadsheet, Concrete Playground'],['pin','Chapel Street precinct media'],['store','Window signage'],['cam','Media team']],
    owners:['Yabi','Rank My Business','Media team','Store team'],
-   todo:['Announce the date the moment it is fixed','Print numbered cards for the first 100','Roster extra staff for the day','Brief staff on voucher rules at the till','Queue barriers, if council allows them','Drinks and bites order','Shot list: the line, the doors opening, first customers'],
-   decide:['12 or 13 Nov (or Sat 14)','Paid ads for opening, or organic only']
+   todo:['Announce Sat 14 Nov on social and email','Print numbered cards for the first 100','Roster extra staff for the day','Brief staff on voucher rules at the till','Queue barriers, if council allows them','Drinks and bites order','Shot list: the line, the doors opening, first customers'],
+   decide:['Voucher valid same day only, or on a return visit','Paid ads for opening, or organic only']
  },
  { id:'clearance', name:'Clearance', icon:'tag', c:'--clear',
-   when:'Fri 20 – Mon 30 Nov', start:'2026-11-20', end:'2026-11-30',
-   sum:'35% to 40% off selected stock, online and in store. Kept separate from Black Friday.',
+   when:'Fri 20 – Mon 30 Nov · may run into Dec', start:'2026-11-20', end:'2026-11-30',
+   sum:'35% to 40% off selected stock, online and in store. Kept separate from Black Friday. May run into December.',
    leaves:['35–40% off','Online + in store','No stacking','Cash flow'],
-   what:'A clear-out of slower stock at 35% to 40% off. It starts three days before Black Friday and runs to the end of the month. These products sit in their own clearance section with a set discount. Black Friday\'s 20% does not apply on top, and no promotions overlap.',
+   what:'A clear-out of slower stock at 35% to 40% off. It starts three days before Black Friday and runs to the end of the month. If not enough stock has cleared by then, it carries on into December. These products sit in their own clearance section with a set discount. Black Friday\'s 20% does not apply on top, and no promotions overlap.',
    why:'Turn slow stock into cash and free up shelf space before December.',
-   terms:[['Discount','35% to 40%, set per product'],['Online','Outlet collection on the website'],['In store','One clearly marked area'],['Stacking','None. Black Friday excludes these items.'],['Price display','Original price shown crossed out']],
+   terms:[['Discount','35% to 40%, set per product'],['Online','Outlet collection on the website'],['In store','One clearly marked area'],['Stacking','None. Black Friday excludes these items.'],['Price display','Original price shown crossed out'],['Extension','Into December if not enough stock has cleared']],
    note:'Reuse the EOFY setup: original price into compare-at, sale price rounded to the dollar, product into the Outlet collection. Black Friday then excludes that collection.',
-   flags:['Keep the in-store clearance to one area so the rest of a brand-new floor still feels full price.'],
+   flags:['Keep the in-store clearance to one area so the rest of a brand-new floor still feels full price.','If it runs into December it sits next to full-price gifting. Keep it to the Outlet collection and the one area in store, and stop advertising it.'],
    channels:[['mega','Ads'],['mail','Email'],['web','Website banner'],['store','In-store area']],
    owners:['Yabi','Rank My Business','To assign'],
    todo:['Choose the products and the discount for each','Load prices and the Outlet collection by Thu 19 Nov','Signage for the in-store area','Check Black Friday excludes every clearance item'],
-   decide:['Product list and discount per product']
+   decide:['Product list and discount per product','Extend into December? Call it by Fri 27 Nov']
  },
  { id:'blackfriday', name:'Black Friday', icon:'pct', c:'--bf',
    when:'Mon 23 – Mon 30 Nov', start:'2026-11-23', end:'2026-11-30',
@@ -597,9 +597,9 @@ const P = [
 ];
 
 const GROUPS = [
- {id:'launch', n:'Part 1', name:'Launch & events', icon:'spark', c:'--open', when:'Now → Fri 13 Nov', items:['groundwork','vip','opening'],
-  sum:'Open Chapel Street, our home base, with a private night first and a line outside the door two days later.'},
- {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Fri 20 – Mon 30 Nov', items:['clearance','blackfriday'],
+ {id:'launch', n:'Part 1', name:'Launch & events', icon:'spark', c:'--open', when:'Now → Sat 14 Nov', items:['groundwork','vip','opening'],
+  sum:'Open Chapel Street, our home base, with a private night on Thursday and a line outside the door on Saturday morning.'},
+ {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Fri 20 – Mon 30 Nov (clearance may run on)', items:['clearance','blackfriday'],
   sum:'Our biggest sales week of the year, with a separate clearance running alongside to turn slow stock into cash.'},
  {id:'giftpart', n:'Part 3', name:'Gifting season', icon:'gift', c:'--gift', when:'Tue 1 – Thu 24 Dec', items:['gifting'],
   sum:'Back to full price. Gifts, gift boxes and free engraving all the way to Christmas Eve.'},
@@ -631,14 +631,14 @@ const HOUSES = [
 
 const WEEKS = [
  {d:'Mon 12 Oct', now:true, t:[
-  ['Lock VIP night and opening dates','Yabi','groundwork'],
+  ['Tell the team: VIP Thu 12 Nov, opening Sat 14 Nov','Yabi','groundwork'],
   ['Decide who builds the Shopify discounts','Yabi','groundwork'],
   ['Brief Rank My Business on the full plan','Yabi','groundwork'],
   ['Waitlist sign-up live on website and Instagram bio','Rank My Business','groundwork'],
   ['Send influencer and VIP client lists to the team','Yabi','vip']]},
  {d:'Mon 19 Oct', t:[
   ['Pitch Concrete Playground, Broadsheet and precinct media','Yabi','opening'],
-  ['Order gift boxes and contents','Yabi','groundwork'],
+  ['Order opening gifts and VIP diffusers and candles','Yabi','groundwork'],
   ['Book host, DJ and catering','Yabi','vip'],
   ['Check council queue rules and liquor licence','Yabi','groundwork'],
   ['Application form live for non-fragrance guests','Rank My Business','vip']]},
@@ -654,7 +654,7 @@ const WEEKS = [
   ['Opening countdown posts','Media team','opening'],
   ['Staff briefing: vouchers, numbered cards, queue','Store team','opening'],
   ['VIP final numbers and run sheet','Yabi','vip']]},
- {d:'Mon 9 Nov', events:[['vip','VIP night · Tue 10 Nov'],['opening','Opening · Thu 12 or Fri 13']], t:[
+ {d:'Mon 9 Nov', events:[['vip','VIP night · Thu 12 Nov'],['opening','Opening · Sat 14 Nov']], t:[
   ['Post VIP content within 24 hours','Media team','vip'],
   ['Thank-you message to every VIP guest','Yabi','vip'],
   ['Opening day email to full list','Rank My Business','opening'],
@@ -667,7 +667,7 @@ const OWNERS = [
  {n:'Rank My Business', a:'R', c:'--boxing', role:'Agency', jobs:[['Every email, every part','groundwork'],['Meta ads and reels as ads','blackfriday'],['Waitlist and application forms','groundwork'],['VIP RSVP emails','vip'],['Boxing Day email and ads','boxing']]},
  {n:'Yabi', a:'Y', c:'--vip', role:'Influencers, press, events', jobs:[['Influencer list and agreements','vip'],['VIP client list and approvals','vip'],['Press and precinct media','opening'],['Both events end to end','opening'],['Speaking at VIP night','vip']]},
  {n:'Media team', a:'M', c:'--open', role:'Photo and video', jobs:[['Full coverage of VIP night','vip'],['The line and the doors opening','opening'],['Content posted within 24 hours','vip'],['Footage for Black Friday ads','blackfriday']]},
- {n:'Store team', a:'S', c:'--clear', role:'The floor', jobs:[['Queue and numbered cards','opening'],['Voucher rules at the till','opening'],['Clearance area in store','clearance'],['Engraving through December','gifting']]},
+ {n:'Store team', a:'S', c:'--clear', role:'The floor', jobs:[['Queue and numbered cards, Sat 14 Nov','opening'],['Voucher rules at the till','opening'],['Clearance area in store','clearance'],['Engraving through December','gifting']]},
  {n:'To assign', a:'?', c:'--ground', role:'Needs a name', unassigned:true, jobs:[['Shopify discounts and exclusions','groundwork'],['Clearance prices and Outlet collection','clearance']]}
 ];
 
@@ -687,7 +687,7 @@ document.addEventListener('change', e => {
 
 /* hero */
 document.getElementById('facts').innerHTML = [
- ['vip','spark','VIP night','Tue 10 Nov'],['open','door','Opening','12 or 13 Nov'],['bf','pct','Black Friday','23 – 30 Nov'],['gift','gift','Gifting','1 – 24 Dec'],['boxing','box','Boxing Day','26 – 27 Dec']
+ ['vip','spark','VIP night','Thu 12 Nov'],['open','door','Opening day','Sat 14 Nov'],['bf','pct','Black Friday','23 – 30 Nov'],['gift','gift','Gifting','1 – 24 Dec'],['boxing','box','Boxing Day','26 – 27 Dec']
 ].map(([c,i,l,d]) => `<span class="fact"><span class="dot" style="background:var(--${c}-t);color:var(--${c})">${ic(i)}</span><b>${l}</b><span class="mono">${d}</span></span>`).join('');
 document.getElementById('goals').innerHTML = GOALS.map(([i,c,l,t]) => `<div class="goal"><div class="eyebrow"><svg class="i" style="color:${v(c)}"><use href="#i-${i}"/></svg>${l}</div><p>${t}</p></div>`).join('');
 document.getElementById('rules').innerHTML = RULES.map(r => `<span>${ic('check')}${r}</span>`).join('');
@@ -719,10 +719,10 @@ function buildGantt(){
   const months = {0:'October',4:'November',9:'December'};
   const h = `<div></div><div class="weeks">${mons.map((m,i)=>`<span style="left:${i*7/DAYS*100}%"><b>${months[i]||'&nbsp;'}</b>${m}</span>`).join('')}</div>`;
   const rows = {
-    groundwork:[[['2026-10-10','2026-11-09','Lists, press, boxes, permits']]],
-    vip:[[['2026-11-10','2026-11-10','',true]],[['2026-11-10','Tue 10 · proposed']]],
-    opening:[[['2026-11-12','2026-11-13','',true]],[['2026-11-12','Thu 12 / Fri 13']]],
-    clearance:[[['2026-11-20','2026-11-30','35–40% off']]],
+    groundwork:[[['2026-10-10','2026-11-11','Lists, press, gifts, permits']]],
+    vip:[[['2026-11-12','2026-11-12','']],[['2026-11-12','Thu 12 · evening']]],
+    opening:[[['2026-11-14','2026-11-14','']],[['2026-11-14','Sat 14 · morning']]],
+    clearance:[[['2026-11-20','2026-11-30','35–40% off'],['2026-12-01','2026-12-13','',true]],[['2026-12-01','May run on']]],
     blackfriday:[[['2026-11-23','2026-11-30','20% off']],[['2026-11-27','Black Friday',1],['2026-11-30','Cyber Mon']]],
     gifting:[[['2026-12-01','2026-12-24','Gifts, boxes, free engraving']],[['2026-12-16','Last post for Christmas ~mid Dec (confirm)',1]]],
     boxing:[[['2026-12-26','2026-12-27','']],[['2026-12-26','$50 off $300+',1]]]
@@ -742,7 +742,7 @@ function buildGantt(){
       body += `</div>`;
     });
   });
-  const today = pct(d('2026-10-10')+432e5);
+  const today = pct(d('2026-10-13')+432e5);
   return h + `<div class="g-body">${body}<div class="today" style="left:calc(var(--lab) + (100% - var(--lab)) * ${today/100})"><span>Today</span></div></div>`;
 }
 document.getElementById('gantt').innerHTML = buildGantt();
@@ -774,7 +774,7 @@ document.getElementById('ownersGrid').innerHTML = OWNERS.map(o => `<article clas
 /* ---------- print version: 4 condensed A4 pages ---------- */
 (function(){
   const top = (title) => `<div class="p-top"><span class="eyebrow">Khrisha Perfumery · Chapel Street · November &amp; December 2026</span><span class="eyebrow">${title}</span></div>`;
-  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 10 Oct 2026 · page ${n} of 4</span></div>`;
+  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 13 Oct 2026 · page ${n} of 4</span></div>`;
   const item = p => `<div class="p-item" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
     <div class="col">
       <h3>${p.name}<span class="mono">${p.when}</span></h3>
