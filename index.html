@@ -412,7 +412,7 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
 
 <main class="wrap screen-only">
   <header class="hero">
-    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Mon 26 Oct 2026</div>
+    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Tue 27 Oct 2026</div>
     <h1>November &amp; <em>December</em></h1>
     <p class="lede">Our plan for the last two months of the year, in four parts. First the Chapel Street launch and its two events. Then Black Friday with the clearance. Then the gifting season. Boxing Day closes the year. Tap any card to open its full brief.</p>
     <div class="facts" id="facts"></div>
@@ -504,19 +504,19 @@ const P = [
    leaves:['Waitlist','Guest lists','Press','Gift boxes','Permits'],
    what:'Four weeks to get the invitations out, the press pitched, the boxes made and the paperwork done. Most problems on an opening night are caused in these four weeks, so this stage gets the same attention as the events themselves.',
    why:'Walk into VIP week with a confirmed guest list, a confirmed opening date, boxes on the shelf and every discount already built in Shopify.',
-   terms:[['VIP night','Thu 19 or Fri 20 Nov, evening (proposed)'],['Grand opening','Sat 21 Nov, from the morning']],
-   note:'The grand opening is Saturday 21 November. VIP night is Thursday 19 or Friday 20; once it is locked, invitations go out.',
+   terms:[['VIP night','Thu 19 Nov, evening'],['Grand opening','Sat 21 Nov, from the morning']],
+   note:'VIP night is Thursday 19 November and the grand opening is Saturday 21 November. Invitations can go out now.',
    channels:[['web','Waitlist on website'],['social','Instagram bio link'],['mail','Email'],['press','Press pitches']],
    owners:['Yabi','Rank My Business','To assign'],
    todo:['Waitlist sign-up on the website and Instagram bio','Send the influencer and VIP client lists to the team','Application form for influential people outside fragrance','Pitch Concrete Playground, Broadsheet and precinct media with both dates','Order 100 opening-day gifts, 200 VIP gift boxes and the VIP purchase gifts','Check queue and footpath rules with City of Stonnington','Check if free drinks need a liquor licence; book RSA staff','Build every discount for the season in Shopify ahead of time'],
-   decide:['VIP night: Thu 19 or Fri 20 Nov','What goes in the $150 opening-day gift','Who builds the Shopify discounts and exclusions']
+   decide:['What goes in the $150 opening-day gift','Who builds the Shopify discounts and exclusions']
  },
- { id:'vip', name:'VIP night', icon:'spark', c:'--vip', tentative:true,
-   when:'Thu 19 or Fri 20 Nov · evening (proposed)', start:'2026-11-19', end:'2026-11-20',
+ { id:'vip', name:'VIP night', icon:'spark', c:'--vip',
+   when:'Thu 19 Nov · evening', start:'2026-11-19', end:'2026-11-19',
    sum:'A private evening for about 200: fragrance people, influencers and our best clients.',
    leaves:['200 guests','Gift box for every guest','$200 gift with purchase','Host + 2 speakers','DJ / live music','Champagne'],
    what:'A private evening in the new store before the public sees it. Around 200 guests: fragrance creators and enthusiasts, our VIP clients, and a few people with big followings outside fragrance. A host runs the night. Yabi speaks, and a second speaker takes guests through the fragrances on show. Live music or a DJ, free-flowing champagne, other drinks and small bites. Every guest leaves with a premium gift box of candles, home scents and more to discover. Every guest who buys on the night takes home a complimentary home diffuser or candle from Gritti or Casamorati, valued at $200. Our media team covers the whole night.',
-   why:'This night makes the content that fills the line on opening day. Every story and reel posted from the room tells people the doors open that weekend.',
+   why:'This night makes the content that fills the line on opening day. Every story and reel posted from the room tells people the doors open in two days.',
    terms:[['Guests','About 200'],['Run of show','Host, Yabi speaks, then the fragrance presentation'],['Music','DJ or live music'],['Drinks','Free-flowing champagne, other drinks, small bites'],['Gift box','Premium box for every guest: candles, home scents and more to discover'],['Gift with purchase','Gritti or Casamorati diffuser or candle ($200) for every guest who buys'],['Paid creators','In-store gift voucher, in return for agreed posts']],
    note:'Influencer deal in writing before the night: 1 reel and 3 stories, collab tag with @khrishaperfumery, #ad on paid posts, and 30 days for us to reuse their content.',
    flags:['About 200 people in roughly 150 sqm needs a capacity check. Two arrival times, 6:00 and 7:30, is one way to handle it.'],
@@ -524,7 +524,7 @@ const P = [
    owners:['Yabi','Rank My Business','Media team'],
    showcase:true,
    todo:['Order 200 VIP gift boxes: candles, home scents and more','Order Gritti and Casamorati diffusers and candles for the purchase gift','Confirm the host and the second speaker','Book the DJ or musicians','Book drinks, champagne and catering','Send invitations with an RSVP that we approve','Agree influencer deliverables in writing','Media brief: arrivals, speeches, fragrance table, gift boxes, diffusers and candles','Final guest list and run sheet by Fri 13 Nov'],
-   decide:['Date: Thu 19 or Fri 20 Nov','How many diffusers and candles to hold','Voucher value for paid creators','Capacity plan for 200 guests']
+   decide:['How many diffusers and candles to hold','Voucher value for paid creators','Capacity plan for 200 guests']
  },
  { id:'opening', name:'Grand opening', icon:'door', c:'--open',
    when:'Sat 21 Nov · from the morning', start:'2026-11-21', end:'2026-11-21',
@@ -598,7 +598,7 @@ const P = [
 
 const GROUPS = [
  {id:'launch', n:'Part 1', name:'Launch & events', icon:'spark', c:'--open', when:'Now → Sat 21 Nov', items:['groundwork','vip','opening'],
-  sum:'Open Chapel Street, our home base, with a private night on Thursday 19 or Friday 20 November and a line outside the door on Saturday 21 November.'},
+  sum:'Open Chapel Street, our home base, with a private night on Thursday 19 November and a line outside the door on Saturday 21 November.'},
  {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Fri 20 – Mon 30 Nov (clearance may run on)', items:['clearance','blackfriday'],
   sum:'Our biggest sales week of the year, starting two days after the grand opening, with a separate clearance running alongside to turn slow stock into cash.'},
  {id:'giftpart', n:'Part 3', name:'Gifting season', icon:'gift', c:'--gift', when:'Tue 1 – Thu 24 Dec', items:['gifting'],
@@ -631,8 +631,7 @@ const HOUSES = [
 
 const WEEKS = [
  {d:'Mon 26 Oct', now:true, t:[
-  ['Tell the team: VIP Thu 19 or Fri 20 Nov, opening Sat 21 Nov','Yabi','groundwork'],
-  ['Lock the VIP night date','Yabi','vip'],
+  ['Tell the team: VIP Thu 19 Nov, opening Sat 21 Nov','Yabi','groundwork'],
   ['VIP invitations out, with RSVP','Yabi','vip'],
   ['Move emails, ads, VIP form and store page to the new dates','Rank My Business','opening'],
   ['Set Meta budget for each part','Yabi','blackfriday']]},
@@ -648,7 +647,7 @@ const WEEKS = [
   ['Media team shot list for both events','Yabi','vip'],
   ['VIP final numbers and run sheet by Fri 13 Nov','Yabi','vip'],
   ['Opening countdown posts begin','Media team','opening']]},
- {d:'Mon 16 Nov', events:[['vip','VIP night · Thu 19 or Fri 20'],['opening','Grand opening · Sat 21']], t:[
+ {d:'Mon 16 Nov', events:[['vip','VIP night · Thu 19 Nov'],['opening','Grand opening · Sat 21']], t:[
   ['Staff briefing: vouchers, numbered cards, queue','Store team','opening'],
   ['Clearance prices live Fri 20 Nov','To assign','clearance'],
   ['Post VIP content within 24 hours','Media team','vip'],
@@ -686,7 +685,7 @@ document.addEventListener('change', e => {
 
 /* hero */
 document.getElementById('facts').innerHTML = [
- ['vip','spark','VIP night','Thu 19 or Fri 20 Nov'],['open','door','Grand opening','Sat 21 Nov'],['bf','pct','Black Friday','23 – 30 Nov'],['gift','gift','Gifting','1 – 24 Dec'],['boxing','box','Boxing Day','26 – 27 Dec']
+ ['vip','spark','VIP night','Thu 19 Nov'],['open','door','Grand opening','Sat 21 Nov'],['bf','pct','Black Friday','23 – 30 Nov'],['gift','gift','Gifting','1 – 24 Dec'],['boxing','box','Boxing Day','26 – 27 Dec']
 ].map(([c,i,l,d]) => `<span class="fact"><span class="dot" style="background:var(--${c}-t);color:var(--${c})">${ic(i)}</span><b>${l}</b><span class="mono">${d}</span></span>`).join('');
 document.getElementById('goals').innerHTML = GOALS.map(([i,c,l,t]) => `<div class="goal"><div class="eyebrow"><svg class="i" style="color:${v(c)}"><use href="#i-${i}"/></svg>${l}</div><p>${t}</p></div>`).join('');
 document.getElementById('rules').innerHTML = RULES.map(r => `<span>${ic('check')}${r}</span>`).join('');
@@ -719,7 +718,7 @@ function buildGantt(){
   const h = `<div></div><div class="weeks">${mons.map((m,i)=>`<span style="left:${i*7/DAYS*100}%"><b>${months[i]||'&nbsp;'}</b>${m}</span>`).join('')}</div>`;
   const rows = {
     groundwork:[[['2026-10-10','2026-11-18','Lists, press, gifts, permits']]],
-    vip:[[['2026-11-19','2026-11-20','',true]],[['2026-11-19','Thu 19 or Fri 20 · proposed',1]]],
+    vip:[[['2026-11-19','2026-11-19','']],[['2026-11-19','Thu 19 · evening',1]]],
     opening:[[['2026-11-21','2026-11-21','']],[['2026-11-21','Sat 21 · grand opening',1]]],
     clearance:[[['2026-11-20','2026-11-30','35–40% off'],['2026-12-01','2026-12-13','',true]],[['2026-12-01','May run on']]],
     blackfriday:[[['2026-11-23','2026-11-30','20% off']],[['2026-11-27','Black Friday',1],['2026-11-30','Cyber Mon']]],
@@ -741,7 +740,7 @@ function buildGantt(){
       body += `</div>`;
     });
   });
-  const today = pct(d('2026-10-26')+432e5);
+  const today = pct(d('2026-10-27')+432e5);
   return h + `<div class="g-body">${body}<div class="today" style="left:calc(var(--lab) + (100% - var(--lab)) * ${today/100})"><span>Today</span></div></div>`;
 }
 document.getElementById('gantt').innerHTML = buildGantt();
@@ -773,7 +772,7 @@ document.getElementById('ownersGrid').innerHTML = OWNERS.map(o => `<article clas
 /* ---------- print version: 4 condensed A4 pages ---------- */
 (function(){
   const top = (title) => `<div class="p-top"><span class="eyebrow">Khrisha Perfumery · Chapel Street · November &amp; December 2026</span><span class="eyebrow">${title}</span></div>`;
-  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 26 Oct 2026 · page ${n} of 4</span></div>`;
+  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 27 Oct 2026 · page ${n} of 4</span></div>`;
   const item = p => `<div class="p-item" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
     <div class="col">
       <h3>${p.name}<span class="mono">${p.when}</span></h3>
