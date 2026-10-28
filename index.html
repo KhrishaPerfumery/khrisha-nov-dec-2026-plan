@@ -412,7 +412,7 @@ footer{padding-block:64px 48px; color:var(--muted); font-size:13.5px; display:fl
 
 <main class="wrap screen-only">
   <header class="hero">
-    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Tue 27 Oct 2026</div>
+    <div class="eyebrow">Khrisha Perfumery · Chapel Street · internal · updated Wed 28 Oct 2026</div>
     <h1>November &amp; <em>December</em></h1>
     <p class="lede">Our plan for the last two months of the year, in four parts. First the Chapel Street launch and its two events. Then Black Friday with the clearance. Then the gifting season. Boxing Day closes the year. Tap any card to open its full brief.</p>
     <div class="facts" id="facts"></div>
@@ -541,17 +541,17 @@ const P = [
    decide:['Voucher valid same day only, or on a return visit','Paid ads for opening, or organic only']
  },
  { id:'clearance', name:'Clearance', icon:'tag', c:'--clear',
-   when:'Fri 20 – Mon 30 Nov · may run into Dec', start:'2026-11-20', end:'2026-11-30',
+   when:'Mon 23 – Mon 30 Nov · may run into Dec', start:'2026-11-23', end:'2026-11-30',
    sum:'35% to 40% off selected stock, online and in store. Kept separate from Black Friday. May run into December.',
    leaves:['35–40% off','Online + in store','No stacking','Cash flow'],
-   what:'A clear-out of slower stock at 35% to 40% off. It starts three days before Black Friday and runs to the end of the month. If not enough stock has cleared by then, it carries on into December. These products sit in their own clearance section with a set discount. Black Friday\'s 20% does not apply on top, and no promotions overlap.',
+   what:'A clear-out of slower stock at 35% to 40% off. It starts with Black Friday on Monday 23 November, once the opening weekend is over, and runs to the end of the month. If not enough stock has cleared by then, it carries on into December. These products sit in their own clearance section with a set discount. Black Friday\'s 20% does not apply on top, and no promotions overlap.',
    why:'Turn slow stock into cash and free up shelf space before December.',
    terms:[['Discount','35% to 40%, set per product'],['Online','Outlet collection on the website'],['In store','One clearly marked area'],['Stacking','None. Black Friday excludes these items.'],['Price display','Original price shown crossed out'],['Extension','Into December if not enough stock has cleared']],
    note:'Reuse the EOFY setup: original price into compare-at, sale price rounded to the dollar, product into the Outlet collection. Black Friday then excludes that collection.',
    flags:['Keep the in-store clearance to one area so the rest of a brand-new floor still feels full price.','If it runs into December it sits next to full-price gifting. Keep it to the Outlet collection and the one area in store, and stop advertising it.'],
    channels:[['mega','Ads'],['mail','Email'],['web','Website banner'],['store','In-store area']],
    owners:['Yabi','Rank My Business','To assign'],
-   todo:['Choose the products and the discount for each','Load prices and the Outlet collection by Thu 19 Nov','Signage for the in-store area','Check Black Friday excludes every clearance item'],
+   todo:['Choose the products and the discount for each','Prepare prices and the Outlet collection; switch them on Mon 23 Nov, not before','Signage for the in-store area','Check Black Friday excludes every clearance item'],
    decide:['Product list and discount per product','Extend into December? Call it by Fri 27 Nov']
  },
  { id:'blackfriday', name:'Black Friday', icon:'pct', c:'--bf',
@@ -599,7 +599,7 @@ const P = [
 const GROUPS = [
  {id:'launch', n:'Part 1', name:'Launch & events', icon:'spark', c:'--open', when:'Now → Sat 21 Nov', items:['groundwork','vip','opening'],
   sum:'Open Chapel Street, our home base, with a private night on Thursday 19 November and a line outside the door on Saturday 21 November.'},
- {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Fri 20 – Mon 30 Nov (clearance may run on)', items:['clearance','blackfriday'],
+ {id:'bfpart', n:'Part 2', name:'Black Friday', icon:'pct', c:'--bf', when:'Mon 23 – Mon 30 Nov (clearance may run on)', items:['clearance','blackfriday'],
   sum:'Our biggest sales week of the year, starting two days after the grand opening, with a separate clearance running alongside to turn slow stock into cash.'},
  {id:'giftpart', n:'Part 3', name:'Gifting season', icon:'gift', c:'--gift', when:'Tue 1 – Thu 24 Dec', items:['gifting'],
   sum:'Back to full price. Gifts, gift boxes and free engraving all the way to Christmas Eve.'},
@@ -649,11 +649,10 @@ const WEEKS = [
   ['Opening countdown posts begin','Media team','opening']]},
  {d:'Mon 16 Nov', events:[['vip','VIP night · Thu 19 Nov'],['opening','Grand opening · Sat 21']], t:[
   ['Staff briefing: vouchers, numbered cards, queue','Store team','opening'],
-  ['Clearance prices live Fri 20 Nov','To assign','clearance'],
-  ['Post VIP content within 24 hours','Media team','vip'],
+    ['Post VIP content within 24 hours','Media team','vip'],
   ['Opening day email to full list','Rank My Business','opening']]},
  {d:'Mon 23 Nov', events:[['blackfriday','Black Friday · 23 to 30 Nov']], t:[
-  ['Black Friday discount live Mon 23 Nov','To assign','blackfriday'],
+  ['Black Friday discount and clearance prices live Mon 23 Nov','To assign','blackfriday'],
   ['Opening footage into Black Friday ads','Rank My Business','blackfriday'],
   ['Thank-you message to every VIP guest','Yabi','vip'],
   ['Engraving capacity set for December','Store team','gifting']]}
@@ -720,7 +719,7 @@ function buildGantt(){
     groundwork:[[['2026-10-10','2026-11-18','Lists, press, gifts, permits']]],
     vip:[[['2026-11-19','2026-11-19','']],[['2026-11-19','Thu 19 · evening',1]]],
     opening:[[['2026-11-21','2026-11-21','']],[['2026-11-21','Sat 21 · grand opening',1]]],
-    clearance:[[['2026-11-20','2026-11-30','35–40% off'],['2026-12-01','2026-12-13','',true]],[['2026-12-01','May run on']]],
+    clearance:[[['2026-11-23','2026-11-30','35–40% off'],['2026-12-01','2026-12-13','',true]],[['2026-12-01','May run on']]],
     blackfriday:[[['2026-11-23','2026-11-30','20% off']],[['2026-11-27','Black Friday',1],['2026-11-30','Cyber Mon']]],
     gifting:[[['2026-12-01','2026-12-24','Gifts, boxes, free engraving']],[['2026-12-16','Last post for Christmas ~mid Dec (confirm)',1]]],
     boxing:[[['2026-12-26','2026-12-27','']],[['2026-12-26','$50 off $300+',1]]]
@@ -740,7 +739,7 @@ function buildGantt(){
       body += `</div>`;
     });
   });
-  const today = pct(d('2026-10-27')+432e5);
+  const today = pct(d('2026-10-28')+432e5);
   return h + `<div class="g-body">${body}<div class="today" style="left:calc(var(--lab) + (100% - var(--lab)) * ${today/100})"><span>Today</span></div></div>`;
 }
 document.getElementById('gantt').innerHTML = buildGantt();
@@ -772,7 +771,7 @@ document.getElementById('ownersGrid').innerHTML = OWNERS.map(o => `<article clas
 /* ---------- print version: 4 condensed A4 pages ---------- */
 (function(){
   const top = (title) => `<div class="p-top"><span class="eyebrow">Khrisha Perfumery · Chapel Street · November &amp; December 2026</span><span class="eyebrow">${title}</span></div>`;
-  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 27 Oct 2026 · page ${n} of 4</span></div>`;
+  const foot = (n) => `<div class="p-foot"><span>Internal. Not for customers. Targets held separately.</span><span>Updated 28 Oct 2026 · page ${n} of 4</span></div>`;
   const item = p => `<div class="p-item" style="--c:${v(p.c)};--t:${v(p.c+'-t')}">
     <div class="col">
       <h3>${p.name}<span class="mono">${p.when}</span></h3>
